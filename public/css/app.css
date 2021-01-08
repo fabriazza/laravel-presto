@@ -9971,3 +9971,89 @@ h3 {
     border-color: #dee2e6;
   }
 }
+<<<<<<< HEAD
+=======
+hr {
+  background-color: #fb8c00;
+}
+
+.text-main {
+  color: #f86425;
+}
+
+.text-second {
+  color: #fb8c00;
+}
+
+.text-accent {
+  color: #21364d;
+}
+
+.text-soft {
+  color: #f7f7f7;
+}
+
+.bg-main {
+  background-color: #f86425;
+}
+
+.bg-second {
+  background-color: #fb8c00;
+}
+
+.bg-accent {
+  background-color: #21364d;
+}
+
+.bg-accent-gradient {
+  background: linear-gradient(180deg, #292d4e 0%, #3f6c81 41%, #9fc7cf 100%);
+}
+
+.bg-soft {
+  background-color: #f7f7f7;
+}
+
+.btn-accent {
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  background-color: #f86425;
+  color: #ffffff !important;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: 400ms;
+}
+.btn-accent.secondary {
+  background-color: #21364d;
+}
+
+.btn-accent:hover {
+  box-shadow: 0px 5px 14px 0px rgba(249, 86, 25, 0.7);
+  color: #ffffff !important;
+}
+.btn-accent:hover.secondary {
+  box-shadow: 0px 5px 14px 0px rgba(33, 54, 77, 0.671);
+}
+
+.btn-accent i {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #aeb5c2;
+  margin-right: 10px;
+}
+
+.text-1 {
+  font-size: 1rem;
+}
+
+.text-1-5 {
+  font-size: 1.5rem;
+}
+
+.text-2 {
+  font-size: 2rem;
+}
+>>>>>>> 324fe0f3b17ba4bcfc24b8e66efbaf617fa72c6c
