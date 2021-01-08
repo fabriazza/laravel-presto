@@ -1,0 +1,96 @@
+$main-color:#f86425;
+$second-color:#fb8c00;
+$color-accent:#21364d;
+$color-soft:#f7f7f7;
+$accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1) 41%, rgba(159,199,207,1) 100%);
+
+hr{
+  background-color: $second-color;
+}
+
+.text-main{
+  color: $main-color;
+}
+
+.text-second{
+  color: $second-color;
+}
+
+.text-accent{
+  color: $color-accent;
+}
+
+.text-soft{
+  color: $color-soft;
+}
+
+.bg-main{
+  background-color: $main-color;
+}
+
+.bg-second{
+  background-color: $second-color;
+}
+
+.bg-accent{
+  background-color: $color-accent;
+}
+
+.bg-accent-gradient{
+  background: $accent-gradient;
+}
+
+.bg-soft{
+  background-color: $color-soft;
+}
+
+.btn-accent {
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  background-color: $main-color;
+  color: #ffffff !important;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: 400ms;
+
+  &.secondary {
+    background-color: $color-accent;
+  }
+}
+
+.btn-accent:hover {
+  -webkit-box-shadow: 0px 5px 14px 0px rgba(249,86,25,0.7);
+  -moz-box-shadow:    0px 5px 14px 0px rgba(249,86,25,0.7);
+  box-shadow:         0px 5px 14px 0px rgba(249,86,25,0.7);
+  color: #ffffff !important;
+
+  &.secondary {
+    -webkit-box-shadow: 0px 5px 14px 0px rgba(33, 54, 77, 0.671);
+    -moz-box-shadow:    0px 5px 14px 0px rgba(33, 54, 77, 0.671);
+    box-shadow:         0px 5px 14px 0px rgba(33, 54, 77, 0.671);
+  }
+
+}
+
+.btn-accent i {
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #aeb5c2;
+  margin-right: 10px;
+}
+
+.text-1 {
+  font-size: 1rem;
+}
+
+.text-1-5 {
+  font-size: 1.5rem;
+}
+
+.text-2 {
+  font-size: 2rem;
+}
