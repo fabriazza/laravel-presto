@@ -9,18 +9,15 @@
         </div>
         <div class="row justify-content-center align-items-center">
             <div class="col-10">
-                <div class="card mb-3"">
-                    <div class="row no-gutters">
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">{{ $product->title }}</h5>
-                          <p class="card-text">{{ $product->description }}</p>
-                          <p class="card-text"><small class="text-muted">{{ $product->category->name }}</small></p>
-                          <p class="card-text"><small class="text-muted">{{ $product->price }}</small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+               <x-card
+               title="{{ $product->title }}"
+               description="{{ $product->description }}"
+               price="{{ $product->price }}"
+               categoryname="{{ $product->category->name }}"
+               user="{{ $product->user->name }}"
+               createdat="{{ $product->created_at->format('d/m/y') }}"
+               categoryid="{{ $product->category->id }}"
+               />
             </div>
         </div>
     </div>

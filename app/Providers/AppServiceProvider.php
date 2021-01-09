@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
@@ -30,6 +31,9 @@ class AppServiceProvider extends ServiceProvider
             $categories = Category::all();
             View::share(compact('categories'));
         }
-
+        if(Schema::hasTable('products')){
+            $products = Product::all();
+            View::share(compact('products'));
+        }
     }
 }

@@ -26,6 +26,6 @@ Route::post('/product/store', [ProductController::class , 'store'])->name('produ
 
 Route::get('/product/thankyou/{product}', [ProductController::class , 'thankyou'])->name('product.thankyou');
 
-Route::get('/product/{category}/index', [HomeController::class , 'indexcategories'])->name('category.index');
+Route::get('/product/{categoryid}/index', [HomeController::class , 'indexcategories'])->name('category.index');
 
 

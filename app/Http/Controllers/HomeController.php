@@ -29,10 +29,9 @@ class HomeController extends Controller
         return view('home', compact('products'));
     }
 
-    public function indexcategories(Category $category)
+    public function indexcategories($categoryid)
     {
-        $category_id=$category->id;
-        $category=Category::find($category_id);
+        $category=Category::find($categoryid);
         $products=$category->products()->orderBy('created_at', 'desc')->paginate(5);
         return view('product.indexcategories', compact('products'));
     }
