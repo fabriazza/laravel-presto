@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,5 +27,13 @@ class HomeController extends Controller
     {
         $products=Product::orderBy('created_at', 'desc')->take(5)->get();
         return view('home', compact('products'));
+    }
+
+    public function indexcategories(Category $category)
+    {
+        $category_id=$category->id;
+        $category=Category::find($category_id);
+        $products=$category->products()->orderBy('created_at', 'desc')->paginate(5);
+        return view('product.indexcategories', compact('products'));
     }
 }
