@@ -10,7 +10,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown d-flex align-items-center">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        Categorie
+                    </a>
 
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        @foreach ($categories as $category)
+                            <a class="dropdown-item" href="{{route('category.index', $category)}}">{{$category->name}}</a>
+                        @endforeach
+                    </div>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
