@@ -4,9 +4,6 @@ $color-accent:#E57720;
 $color-soft:#f7f7f7;
 $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1) 41%, rgba(159,199,207,1) 100%);
 
-hr{
-  background-color: $second-color;
-}
 
 .text-main{
   color: $main-color;
@@ -93,4 +90,52 @@ hr{
 
 .text-2 {
   font-size: 2rem;
+}
+.link-custom:hover{
+  color: $color-soft !important;
+  text-decoration: none !important;
+}
+.img-custom{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius:10px !important ;
+  border-bottom-left-radius:10px !important;
+}
+.nav-link:hover{
+  color: $second-color !important;
+}
+.dropdown-menu-category{
+  height:150px;
+  overflow-y: scroll;
+}
+/* width */
+.dropdown-menu-right-category::-webkit-scrollbar {
+  width: 20px;
+  background:$main-color;
+}
+
+/* Track */
+.dropdown-menu-right-category::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background:transparent;
+  border-left: none;
+}
+ 
+/* Handle */
+.dropdown-menu-right-category::-webkit-scrollbar-thumb {
+  background:$color-accent !important; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+// .dropdown-menu-right::-webkit-scrollbar-thumb:hover {
+//   background: $second-color !important; 
+// }
+.card-border{
+  border-radius: 10px;
+}
+.border-card{
+  border-top-right-radius:10px !important ;
+  border-bottom-right-radius:10px !important;
 }
