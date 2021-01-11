@@ -9972,19 +9972,19 @@ h3 {
   }
 }
 hr {
-  background-color: #fb8c00;
+  background-color: #3a4547;
 }
 
 .text-main {
-  color: #f86425;
+  color: #272E30;
 }
 
 .text-second {
-  color: #fb8c00;
+  color: #3a4547;
 }
 
 .text-accent {
-  color: #21364d;
+  color: #E57720;
 }
 
 .text-soft {
@@ -9992,15 +9992,15 @@ hr {
 }
 
 .bg-main {
-  background-color: #f86425;
+  background-color: #272E30;
 }
 
 .bg-second {
-  background-color: #fb8c00;
+  background-color: #3a4547;
 }
 
 .bg-accent {
-  background-color: #21364d;
+  background-color: #E57720;
 }
 
 .bg-accent-gradient {
@@ -10013,14 +10013,14 @@ hr {
 
 .btn-accent {
   padding: 0.6rem 1rem 0.6rem 1rem;
-  background-color: #f86425;
+  background-color: #272E30;
   color: #ffffff !important;
   font-weight: 700;
   border-radius: 5px;
   transition: 400ms;
 }
 .btn-accent.secondary {
-  background-color: #21364d;
+  background-color: #E57720;
 }
 
 .btn-accent:hover {
