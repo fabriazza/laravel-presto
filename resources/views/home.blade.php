@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('accesso.negato'))
+    <div class="alert alert-danger">
+        Accesso negato, non sei un revisore
+    </div>
+@endif
 <x-header/>
 <div class="container py-5 my-5">
     <div class="row justify-content-center align-items-center">

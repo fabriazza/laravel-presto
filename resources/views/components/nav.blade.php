@@ -69,6 +69,9 @@
                             <a class="btn btn-accent  text-soft" href="{{ route('product.create') }}"><i class="far fa-plus-square mr-1"></i> Inserisci annuncio</a>
                         </li>
                 @else
+                @if (Auth::user()->is_revisor)
+                    <li class="nav-item"><a class="nav-link" href="{{route('revisor')}}">Admin <span class="badge badge-pill badge-warning">{{\App\Models\Product::ToBeRevisionedCount()}}</span></a></li>
+                @endif
                     <li class="nav-item dropdown d-flex align-items-center">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle  text-soft" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
