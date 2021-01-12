@@ -22,34 +22,37 @@
                     </div>
                 </li>
             </ul>
-
+            
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto d-flex align-items-center  text-soft">
                 <!-- Authentication Links -->
                 @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link  text-soft" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
-
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link  text-soft" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                        <li class="nav-item ml-3">
-                            <a class="btn btn-accent  text-soft" href="{{ route('product.create') }}"><i class="far fa-plus-square mr-1"></i> Inserisci annuncio</a>
-                        </li>
+                @if (Route::has('login'))
+                <li class="nav-item">
+                    <a class="nav-link  text-soft" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @endif
+                
+                @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link  text-soft" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+                @endif
+                <li class="nav-item ml-3">
+                    <a class="btn btn-accent  text-soft" href="{{ route('product.create') }}"><i class="far fa-plus-square mr-1"></i> Inserisci annuncio</a>
+                </li>
                 @else
-                    <li class="nav-item dropdown d-flex align-items-center">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle  text-soft" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right bg-main" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-accent" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
+                @if (Auth::user()->is_revisor)
+                    <li class="nav-item"><a class="nav-link" href="{{route('revisor')}}">Admin <span class="badge badge-pill badge-warning">{{\App\Models\Product::ToBeRevisionedCount()}}</span></a></li>
+                @endif
+                <li class="nav-item dropdown d-flex align-items-center">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle  text-soft" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+                    
+                    <div class="dropdown-menu dropdown-menu-right bg-main" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-accent" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>

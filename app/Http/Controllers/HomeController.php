@@ -25,14 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products=Product::orderBy('created_at', 'desc')->take(5)->get();
+        $products=Product::where('is_accepted', true)
+        ->orderBy('created_at', 'desc')->take(5)->get();
         return view('home', compact('products'));
     }
 
     public function indexcategories($categoryid)
     {
         $category=Category::find($categoryid);
-        $products=$category->products()->orderBy('created_at', 'desc')->paginate(5);
+        $products=$category->products()->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(5);
         return view('product.indexcategories', compact('products'));
     }
 }

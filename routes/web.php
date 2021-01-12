@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +28,15 @@ Route::post('/product/store', [ProductController::class , 'store'])->name('produ
 Route::get('/product/thankyou/{product}', [ProductController::class , 'thankyou'])->name('product.thankyou');
 
 Route::get('/product/{categoryid}/index', [HomeController::class , 'indexcategories'])->name('category.index');
+
+Route::get('/revisor', [RevisorController::class , 'index'])->name('revisor');
+
+Route::post('/revisor/product/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
+
+Route::post('/revisor/product/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
+
+Route::post('/revisor/product/{id}/undo', [RevisorController::class, 'undo'])->name('revisor.undo');
+
+
 
 

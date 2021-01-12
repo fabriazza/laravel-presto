@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('accesso.negato'))
+    <div class="alert alert-danger">
+        Accesso negato, non sei un revisore
+    </div>
+@endif
+
 <div class="container">
     <div class="row justify-content-center align-items-center">
         @foreach ($products as $product)
