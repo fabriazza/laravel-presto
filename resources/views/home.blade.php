@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<x-header/>
+<div class="container py-5 my-5">
     <div class="row justify-content-center align-items-center">
         @foreach ($products as $product)
-        <div class="col-10">
+        <div class="col-10 py-5 mt-5">
            <x-card
             title="{{ $product->title }}"
             description="{{ $product->description }}"

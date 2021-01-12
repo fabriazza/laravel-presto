@@ -5,9 +5,9 @@
         </div>
         <div class="col-md-8 card-body bg-second border-card text-soft px-4 d-flex">
             <div class="row">
-                <div class="col-12">
-                    <h3 class="card-title">{{ $title }}</h3>
-                    <p class="card-text text-truncate">{{ $description }}</p>
+                <div class="col-9 mx-0">
+                    <h4 class="card-title">{{ $title }}</h4>
+                    <p class="card-text">{{ $description }}</p>
                     <div class="row">
                         <div class="col-12 col-md-6 py-4">
                             <span class="text-accent"><i class="fas fa-tags"></i> </span><a href="{{route('category.index', $categoryid)}}" class=" text-soft link-custom text-capitalize">{{ $categoryname }}</a>
