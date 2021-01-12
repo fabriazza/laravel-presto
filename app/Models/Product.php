@@ -22,7 +22,6 @@ class Product extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
-
     static public function ToBeRevisionedCount(){
         return Product::where('is_accepted', null)->count();
     }

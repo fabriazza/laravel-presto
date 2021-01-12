@@ -30,6 +30,7 @@ Route::get('/product/thankyou/{product}', [ProductController::class , 'thankyou'
 Route::get('/product/{categoryid}/index', [HomeController::class , 'indexcategories'])->name('category.index');
 
 Route::get('/revisor', [RevisorController::class , 'index'])->name('revisor');
+<<<<<<< HEAD
 
 Route::post('/revisor/product/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
 
@@ -39,4 +40,11 @@ Route::post('/revisor/product/{id}/undo', [RevisorController::class, 'undo'])->n
 
 
 
+=======
+>>>>>>> 49db5471c933e51f7912eaa9f403f2cbe8b44b4d
 
+Route::post('/revisor/product/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
+
+Route::post('/revisor/product/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
+
+Route::post('/revisor/product/{id}/undo', [RevisorController::class, 'undo'])->name('revisor.undo');
