@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md bg-accent shadow-sm">
     <div class="container">
-        <a class="navbar-brand w-50 nav-link text-soft" href="{{ url('/') }}">
-            <img id="prestonav" src="https://i.ibb.co/dQCxfWy/presto.png" alt="presto" border="0">
+        <a class="navbar-brand w-25 nav-link text-soft" href="{{ url('/') }}">
+            <img id="prestonav" src="https://i.ibb.co/vqGRscR/Senza-titolo-1.png" alt="presto" border="0">
         </a>
         <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon p-1"><i class="fas fa-bars"></i></span>
@@ -72,16 +72,6 @@
                 @if (Auth::user()->is_revisor)
                     <li class="nav-item"><a class="nav-link" href="{{route('revisor')}}">Admin <span class="badge badge-pill badge-warning">{{\App\Models\Product::ToBeRevisionedCount()}}</span></a></li>
                 @endif
-<<<<<<< HEAD
-                <li class="nav-item dropdown d-flex align-items-center">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle  text-soft" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
-                    
-                    <div class="dropdown-menu dropdown-menu-right bg-main" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item text-accent" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-=======
                     <li class="nav-item dropdown d-flex align-items-center">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle  text-soft" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
@@ -90,7 +80,6 @@
                         <div class="dropdown-menu dropdown-menu-right bg-main" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item text-accent" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
->>>>>>> 49db5471c933e51f7912eaa9f403f2cbe8b44b4d
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
