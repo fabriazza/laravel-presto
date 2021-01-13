@@ -36,4 +36,5 @@ class HomeController extends Controller
         $products=$category->products()->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(5);
         return view('product.indexcategories', compact('products'));
     }
+   
 }
