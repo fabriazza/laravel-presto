@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +30,18 @@ Route::get('/product/thankyou/{product}', [ProductController::class , 'thankyou'
 
 Route::get('/product/{categoryid}/index', [HomeController::class , 'indexcategories'])->name('category.index');
 
+Route::get('/revisor', [RevisorController::class , 'index'])->name('revisor');
 
+Route::post('/revisor/product/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
+
+Route::post('/revisor/product/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
+
+Route::post('/revisor/product/{id}/undo', [RevisorController::class, 'undo'])->name('revisor.undo');
+
+Route::get('/lavoraConNoi', [MailController::class , 'lavora'])->name('lavora');
+
+Route::get('/thankyou', [MailController::class , 'thankyou'])->name('lavora.thankyou');
+
+Route::post('/lavora/send',[MailController::class , 'candidato'])->name('lavora.send');
+
+Route::get('/product/show/{productid}',[ProductController::class, 'show'])->name('product.show');
