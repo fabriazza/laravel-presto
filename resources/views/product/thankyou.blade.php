@@ -17,6 +17,7 @@
                user="{{ $product->user->name }}"
                createdat="{{ $product->created_at->format('d/m/y') }}"
                categoryid="{{ $product->category->id }}"
+               productid="{{$product->id}}"
                />
             </div>
         </div>
