@@ -19,10 +19,14 @@
                                 @endforeach
                             </div>
                         </div>
-                        <input type="text" class="form-control" placeholder="Cosa vuoi cercare?" aria-label="Cosa vuoi cercare?" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-accent1" type="button" id="button-addon2"><i class="fas fa-search"></i> Cerca</button>
-                        </div>
+                        <form action="{{ route('search') }}" method="get">    
+                            @csrf                   
+                            <input type="text" name="q" class="form-control" placeholder="Cosa vuoi cercare?" aria-label="Cosa vuoi cercare?" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-accent1" type="submit" id="button-addon2"><i class="fas fa-search"></i> Cerca</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>

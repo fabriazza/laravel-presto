@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md bg-accent shadow-sm">
     <div class="container">
-        <a class="navbar-brand w-50 nav-link text-soft" href="{{ url('/') }}">
-            <img id="prestonav" src="https://i.ibb.co/dQCxfWy/presto.png" alt="presto" border="0">
+        <a class="navbar-brand w-25 nav-link text-soft" href="{{ url('/') }}">
+            <img id="prestonav" src="https://i.ibb.co/vqGRscR/Senza-titolo-1.png" alt="presto" border="0">
         </a>
         <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon p-1"><i class="fas fa-bars"></i></span>
