@@ -43,14 +43,6 @@
                         </div>
                         </div>
                     </div>
-                        {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle text-soft" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Categorie
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-category dropdown-menu-right dropdown-menu-right-category bg-main border-0" aria-labelledby="navbarDropdown">
-                            @foreach ($categories as $category)
-                                <a class="dropdown-item text-accent" href="{{route('category.index', $category)}}">{{$category->name}}</a>
-                            @endforeach
-                        </div> --}}
                     </li>
                 <!-- Authentication Links -->
                 @guest

@@ -30,7 +30,7 @@ class MailController extends Controller
 
         Mail::to('fab@fab.it')->send($email);
 
-        return redirect('lavora.thankyou');
+        return redirect(route('lavora.thankyou'));
     }
     public function thankyou()
     {

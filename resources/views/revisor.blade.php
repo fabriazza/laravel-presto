@@ -2,8 +2,9 @@
 
 @section('content')
 @if ($product)
-<div class="container">
-    <div class="row">
+<div class="container my-5">
+    <h1 class="text-center mb-5">Controlla i nuovi annunci</h1>
+    <div class="row align-items-center">
         <div class="col-8">
             <div class="card border-custom shadow card-border border-0 mb-3">
                 <div class="row no-gutters border-primary">
@@ -34,13 +35,13 @@
         <div class="col-4">
             <div class="row">
                 <div class="col-12">
+                    <form method="post" action="{{route('revisor.accept', $product->id )}}">
+                        @csrf
+                        <button type="submit" class="btn btn-success my-4">Accetta</button>
+                    </form>
                     <form method="post" action="{{route('revisor.reject', $product->id )}}">
                         @csrf
                         <button type="submit" class="btn btn-danger">Rifiuta</button>
-                    </form>
-                    <form method="post" action="{{route('revisor.accept', $product->id )}}">
-                        @csrf
-                        <button type="submit" class="btn btn-success">Accetta</button>
                     </form>
                 </div>
             </div>
@@ -48,10 +49,10 @@
     </div>
 </div>    
 @else
-<div class="container">
+<div class="container my-5 py-5">
     <div class="row">
         <div class="col-12">
-            <h3>Non hai annunci da revisionare</h3>
+            <h3 class="text-center">Non hai annunci da revisionare</h3>
         </div>
     </div>
 </div>
@@ -60,16 +61,36 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h4>Prodotti scartati</h4>
+            <h3 class="text-center mb-5">Prodotti scartati</h3>
         </div>
         <div class="col-12">
-            @foreach ($scartati as $scartato)
-                <h5>{{$scartato->title}}</h5>
-                <form method="post" action="{{route('revisor.undo', $scartato->id )}}">
-                    @csrf
-                    <button type="submit" class="btn btn-success">Ripristina</button>
-                </form>
-            @endforeach
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titolo</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Inserito da</th>
+                        <th scope="col">Ripristina</th>
+                    </tr>
+                </thead>
+                <tbody>  
+                    @foreach ($scartati as $scartato)
+                  <tr>
+                    <th scope="row">{{$scartato->id}}</th>
+                    <td>{{$scartato->title}}</td>
+                    <td>{{$scartato->description}}</td>
+                    <td>{{$scartato->user->name}}</td>
+                    <td>
+                        <form method="post" action="{{route('revisor.undo', $scartato->id )}}">
+                            @csrf
+                            <button type="submit" class="btn bg-accent text-soft">Ripristina</button>
+                        </form>
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
         </div>
     </div>
 </div>
