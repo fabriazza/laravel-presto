@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-center pb-5 position-relative">
             <div class="col-12 col-md-6 py-5">
-                <h1 class="text-white font-weight-bold">Presto</h1>
+                <h1 class="text-white font-weight-bold">{{ __('ui.welcome') }}</h1>
                 <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda velit accusamus ducimus tempore nihil perferendis explicabo consequuntur iusto reiciendis libero nulla, earum totam veniam animi dolorum corrupti nesciunt illo omnis!</p>
             </div>
             <div class="col-12 col-md-6 py-5 text-center">
@@ -15,18 +15,17 @@
                             <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorie</button>
                             <div class="dropdown-menu">
                                 @foreach ($categories as $category)
-                                    <a class="dropdown-item text-accent" href="{{route('category.index', $category)}}">{{$category->name}}</a>
+                                <a class="dropdown-item text-accent" href="{{route('category.index', $category)}}">{{$category->name}}</a>
                                 @endforeach
                             </div>
-                        </div>
-                        <form action="{{ route('search') }}" method="get">    
-                            @csrf                   
-                            <input type="text" name="q" class="form-control" placeholder="Cosa vuoi cercare?" aria-label="Cosa vuoi cercare?" aria-describedby="button-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-accent1" type="submit" id="button-addon2"><i class="fas fa-search"></i> Cerca</button>
+                            <form action="{{ route('search') }}" method="get">
+                                @csrf
                             </div>
-                        </form>
-
+                                <input type="text" name="q" class="form-control" placeholder="Cosa vuoi cercare?" aria-label="Cosa vuoi cercare?" aria-describedby="button-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-accent1" type="submit" id="button-addon2"><i class="fas fa-search"></i> Cerca</button>
+                                </div>
+                            </form>
                     </div>
                 </div>
             </div>

@@ -40,9 +40,13 @@ class HomeController extends Controller
     public function search(Request $request){
         $q=$request->input('q');
         $products=Product::search($q)->where('is_accepted',true)->get();
-        
+
 
         return view('search_result',compact('q','products'));
     }
-   
+
+    public function locale($locale){
+        session()->put('locale', $locale);
+        return redirect()->back();
+    }
 }

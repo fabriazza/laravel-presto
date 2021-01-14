@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\RevisorMiddleware;
+use App\Http\Middleware\SetLocaleMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -38,6 +39,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\SetLocaleMiddleware::class
         ],
 
         'api' => [
