@@ -20,6 +20,7 @@ class MailController extends Controller
     }
     public function candidato(CandidatoRequest $request)
     {
+        
         $name = $request->input('name');
         $mail = $request->input('mail');
         $message = $request->input('message');

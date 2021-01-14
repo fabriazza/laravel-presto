@@ -40,9 +40,9 @@ Route::post('/revisor/product/{id}/undo', [RevisorController::class, 'undo'])->n
 
 Route::get('/lavoraConNoi', [MailController::class , 'lavora'])->name('lavora');
 
-Route::get('/thankyou', [MailController::class , 'thankyou'])->name('lavora.thankyou');
-
 Route::post('/lavora/send',[MailController::class , 'candidato'])->name('lavora.send');
+
+Route::get('/thankyou', [MailController::class , 'thankyou'])->name('lavora.thankyou');
 
 Route::get('/product/show/{productid}',[ProductController::class, 'show'])->name('product.show');
 
