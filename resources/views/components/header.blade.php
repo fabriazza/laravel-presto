@@ -3,7 +3,7 @@
         <div class="row justify-content-center align-items-center pb-5 position-relative">
             <div class="col-12 col-md-6 py-5">
                 <h1 class="text-white font-weight-bold">{{ __('ui.welcome') }}</h1>
-                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda velit accusamus ducimus tempore nihil perferendis explicabo consequuntur iusto reiciendis libero nulla, earum totam veniam animi dolorum corrupti nesciunt illo omnis!</p>
+                <p class="text-white">{{ __('ui.footerdesc') }}</p>
             </div>
             <div class="col-12 col-md-6 py-5 text-center">
                 <img src="/img/presto_illustrazione.svg" alt="Presto" class="title-section-img">
@@ -12,7 +12,7 @@
                 <div class="col-12 col-9">
                     <div class="input-group search-block-inner">
                         <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorie</button>
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('ui.category') }}</button>
                             <div class="dropdown-menu">
                                 @foreach ($categories as $category)
                                 <a class="dropdown-item text-accent" href="{{route('category.index', $category)}}">{{$category->name}}</a>
@@ -21,9 +21,9 @@
                             <form action="{{ route('search') }}" method="get">
                                 @csrf
                             </div>
-                                <input type="text" name="q" class="form-control" placeholder="Cosa vuoi cercare?" aria-label="Cosa vuoi cercare?" aria-describedby="button-addon2">
+                                <input type="text" name="q" class="form-control" placeholder="{{ __('ui.welcome') }}" aria-label="{{ __('ui.wus') }}" aria-describedby="button-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-accent1" type="submit" id="button-addon2"><i class="fas fa-search"></i> Cerca</button>
+                                    <button class="btn btn-accent1" type="submit" id="button-addon2"><i class="fas fa-search"></i> {{ __('ui.se') }}</button>
                                 </div>
                             </form>
                     </div>

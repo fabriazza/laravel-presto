@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>thanks</h1>
+    <h1>{{ __('ui.thanksmail') }}</h1>
 @endsection
