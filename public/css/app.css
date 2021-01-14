@@ -10310,6 +10310,11 @@ h3 {
     width: 75%;
   }
 }
+.flags-dropdown {
+  min-width: 3rem;
+  padding: 0.5rem 1rem;
+}
+
 .flag-icon-background, .flag-icon {
   background-size: contain;
   background-position: 50%;

@@ -42,11 +42,11 @@
       <div class="col-12 my-5 p-3 border-top border-dark">
         <div class="row">
           <div class="col-6">
-            <h5>DESCRIZIONE</h5>
+            <h5>{{ __('ui.des')}}</h5>
             <p>{{ $product->description }}</p>
           </div>
           <div class="col-6">
-            <h5>DETTAGLI VENDITORE</h5>
+            <h5>{{ __('ui.seller')}}</h5>
             <ul class="list-unstyled">
                 <li><i class="fas fa-user text-accent fa-lg my-2"></i> {{$product->user->name}}</li>
                 <li><i class="fas fa-envelope-open-text text-accent fa-lg my-2"></i><a href="mailto:{{$product->user->email}}" class="text-second text-decoration-none"> {{$product->user->email}}</a></li>

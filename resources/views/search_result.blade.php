@@ -4,7 +4,7 @@
 <div class="container my-5 py-5">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center">Ricerca:{{ $q }}</h1>
+            <h1 class="text-center">{{__('ui.se')}}:{{ $q }}</h1>
             
         </div>
     </div>
@@ -33,7 +33,7 @@
                                     <div class="col-12 col-md-6 py-4">
                                             <small class="card-text"><i class="fas fa-user text-accent"></i> {{ $product->user->name }}</small>
                                             <small class="card-text ml-1"><i class="fas fa-clock text-accent"></i> {{ $product->created_at->format('d/m/Y')}}</small>
-                                            <a href="{{route('product.show', $product->id)}}" class="btn bg-accent text-soft text-center mt-3">Mostra annuncio</a>
+                                            <a href="{{route('product.show', $product->id)}}" class="btn bg-accent text-soft text-center mt-3">{{__('ui.showproduct')}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
 <div class="container my-5 py-5">
     <div class="row">
         <div class="col-12">
-            <h3 class="text-center">Non ci sono annunci per la parola {{ $q }}</h3>
+            <h3 class="text-center">{{__('ui.wordnotfind')}} {{ $q }}</h3>
         </div>
     </div>
 </div>

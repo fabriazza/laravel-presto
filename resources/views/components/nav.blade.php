@@ -19,7 +19,7 @@
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn text-soft" data-toggle="modal" data-target="#exampleModalCenter">
-                        Categorie
+                        {{ __('ui.category') }}
                     </button>
 
                     <!-- Modal -->
@@ -27,7 +27,7 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content bg-accent text-center">
                             <div class="modal-header bg-main">
-                            <h5 class="modal-title text-white" id="exampleModalLongTitle">Scegli una categoria</h5>
+                            <h5 class="modal-title text-white" id="exampleModalLongTitle">{{ __('ui.categorycho') }}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -38,7 +38,7 @@
                                 @endforeach
                             </div>
                             <div class="modal-footer bg-main">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('ui.close') }}</button>
                             </div>
                         </div>
                         </div>
@@ -54,11 +54,11 @@
 
                 @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link  text-soft" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="nav-link  text-soft" href="{{ route('register') }}">{{ __('ui.register') }}</a>
                 </li>
                 @endif
                 <li class="nav-item ml-3">
-                    <a class="btn btn-accent  text-soft" href="{{ route('product.create') }}"><i class="far fa-plus-square mr-1"></i> Inserisci annuncio</a>
+                    <a class="btn btn-accent  text-soft" href="{{ route('product.create') }}"><i class="far fa-plus-square mr-1"></i> {{ __('ui.insert') }}</a>
                 </li>
                 @else
                 @if (Auth::user()->is_revisor)
@@ -73,7 +73,7 @@
                             <a class="dropdown-item text-accent" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('ui.logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -83,15 +83,15 @@
                     </li>
 
                     <li class="nav-item ml-3">
-                        <a class="btn btn-accent" href="{{ route('product.create') }}"><i class="far fa-plus-square mr-1"></i> Inserisci annuncio</a>
+                        <a class="btn btn-accent" href="{{ route('product.create') }}"><i class="far fa-plus-square mr-1"></i> {{ __('ui.insert') }}</a>
                     </li>
                 @endguest
                 <li class="nav-item dropdown d-flex align-items-center ml-3">
                     <a class="nav-link dropdown-toggle  text-soft" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        LINGUA
+                        {{ __('ui.language') }}
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right bg-main">
+                    <div class="dropdown-menu dropdown-menu-right flags-dropdown bg-main">
                         <x-flag
                             lang="{{'it'}}"
                             nation="{{'it'}}"

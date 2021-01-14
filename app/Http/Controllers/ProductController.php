@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -41,7 +42,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $product = Product::create([
             'title' => $request->input('title'),
@@ -61,7 +62,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($productid)
-    {   
+    {
           $product=Product::find($productid);
         return view('product.show',compact('product'));
     }

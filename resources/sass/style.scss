@@ -124,16 +124,16 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
   background:transparent;
   border-left: none;
 }
- 
+
 /* Handle */
 .dropdown-menu-right-category::-webkit-scrollbar-thumb {
-  background:$color-accent !important; 
+  background:$color-accent !important;
   border-radius: 20px;
 }
 
 /* Handle on hover */
 // .dropdown-menu-right::-webkit-scrollbar-thumb:hover {
-//   background: $second-color !important; 
+//   background: $second-color !important;
 // }
 .card-border{
   border-radius: 10px;
@@ -344,4 +344,9 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
   #prestonav {
     width: 75%;
   }
+}
+
+.flags-dropdown {
+    min-width: 3rem;
+    padding: 0.5rem 1rem;
 }
