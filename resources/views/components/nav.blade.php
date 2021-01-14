@@ -10,18 +10,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-              
+
             </ul>
-            
+
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto d-flex align-items-center  text-soft">
                 <li class="nav-item dropdown d-flex align-items-center">
-                
+
                     <!-- Button trigger modal -->
                     <button type="button" class="btn text-soft" data-toggle="modal" data-target="#exampleModalCenter">
                         Categorie
                     </button>
-                    
+
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -51,7 +51,7 @@
                     <a class="nav-link  text-soft" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @endif
-                
+
                 @if (Route::has('register'))
                 <li class="nav-item">
                     <a class="nav-link  text-soft" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -81,12 +81,31 @@
                             </form>
                         </div>
                     </li>
-                    
+
                     <li class="nav-item ml-3">
                         <a class="btn btn-accent" href="{{ route('product.create') }}"><i class="far fa-plus-square mr-1"></i> Inserisci annuncio</a>
                     </li>
                 @endguest
-                
+                <li class="nav-item dropdown d-flex align-items-center ml-3">
+                    <a class="nav-link dropdown-toggle  text-soft" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        LINGUA
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right bg-main">
+                        <x-flag
+                            lang="{{'it'}}"
+                            nation="{{'it'}}"
+                        />
+                        <x-flag
+                            lang="{{'en'}}"
+                            nation="{{'gb'}}"
+                        />
+                        <x-flag
+                            lang="{{'es'}}"
+                            nation="{{'es'}}"
+                        />
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
