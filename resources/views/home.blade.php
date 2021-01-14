@@ -3,7 +3,7 @@
 @section('content')
 @if (session('accesso.negato'))
     <div class="alert alert-danger">
-        Accesso negato, non sei un revisore
+        {{ __('ui.denied')}}
     </div>
 @endif
 <x-header/>

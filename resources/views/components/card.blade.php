@@ -16,7 +16,7 @@
                         <div class="col-12 col-md-6 py-4">
                                 <small class="card-text"><i class="fas fa-user text-accent"></i> {{ $user }}</small>
                                 <small class="card-text ml-1"><i class="fas fa-clock text-accent"></i> {{ $createdat}}</small>
-                                <a href="{{route('product.show', $productid)}}" class="btn bg-accent text-soft text-center mt-3">Mostra annuncio</a>
+                                <a href="{{route('product.show', $productid)}}" class="btn bg-accent text-soft text-center mt-3">{{ __('ui.showproduct') }}</a>
                         </div>
                     </div>
                 </div>

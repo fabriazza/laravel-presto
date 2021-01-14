@@ -4,7 +4,7 @@
     <div class="container justify-content-center py-5">
         <div class="row">
             <div class="col-12 text-center py-4">
-                <h1 class="text-success">Complimenti, {{ $product->user->name }} annuncio inserito con successo!</h1>
+                <h1 class="text-success">{{ __('ui.congrats')}}, {{ $product->user->name }} {{ __('ui.congrats2')}}</h1>
             </div>
         </div>
         <div class="row justify-content-center align-items-center">

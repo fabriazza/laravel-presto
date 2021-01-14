@@ -4,7 +4,7 @@
       <div class="row  justify-content-between">
         <div class="col-sm-12 col-md-6">
           <img class="w-25 my-3" src="https://i.ibb.co/dQCxfWy/presto.png" alt="">
-          <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed facere tempore similique repellat nesciunt ducimus totam dolores ab repellendus! Voluptatem eveniet, ratione enim dicta quae perspiciatis vel est neque atque? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus mollitia distinctio consequatur non, illum accusamus harum recusandae totam, perferendis nihil vero iure vitae dicta qui, dolor officia ullam optio deleniti.
+          <p class="text-justify">{{ __('ui.footerdesc') }}
         </div>
         <div class="col-sm-12 col-md-3 my-3">
           <h6>Social</h6>
@@ -19,12 +19,12 @@
         <div class="col-sm-12 col-md-3 my-3">
             <h6 class="">Quick Links</h6>
             <ul class="footer-links">
-              <li><a href="http://scanfcode.com/about/">About Us</a></li>
-              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+              <li><a href="http://scanfcode.com/about/">{{__('ui.aboutus')}}</a></li>
+              <li><a href="http://scanfcode.com/contact/">{{__('ui.contactus')}}</a></li>
+              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">{{__('ui.contribute')}}</a></li>
               <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
               <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
-              <li><a href="{{route('lavora')}}">Lavora con noi</a></li>
+              <li><a href="{{route('lavora')}}">{{__('ui.workwhitus')}}</a></li>
             </ul>
 
         </div>
