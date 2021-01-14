@@ -91,7 +91,7 @@
                         LINGUA
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right bg-main">
+                    <div class="dropdown-menu dropdown-menu-right flags-dropdown bg-main">
                         <x-flag
                             lang="{{'it'}}"
                             nation="{{'it'}}"

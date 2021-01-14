@@ -14,10 +14,16 @@
                     <div class="form-group">
                         <label for="title">Titolo dell'annuncio</label>
                         <input type="text" name="title" class="form-control">
+                        @error('title')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="description">Descrizione dell'annuncio</label>
                         <textarea type="text" name="description" class="form-control" cols="30" rows="10"></textarea>
+                        @error('description')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group w-50">
                         <label for="category">Categoria</label>
@@ -34,6 +40,9 @@
                           <span class="input-group-text">€</span>
                         </div>
                     </div>
+                    @error('price')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     {{-- <div class="form-group">
                         <label for="img">Immagine del post</label>
                         <input type="file" name="img" class="form-control">

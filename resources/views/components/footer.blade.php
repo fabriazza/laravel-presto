@@ -12,7 +12,7 @@
             <li><a class="facebook" href="#"><i class="fab fa-facebook fa-2x my-2"></i></a></li>
             <li><a class="twitter" href="#"><i class="fab fa-twitter fa-2x my-2"></i></a></li>
             <li><a class="dribbble" href="#"><i class="fab fa-dribbble fa-2x my-2"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fab fa-linkedin fa-2x my-2"></i></a></li>   
+            <li><a class="linkedin" href="#"><i class="fab fa-linkedin fa-2x my-2"></i></a></li>
           </ul>
         </div>
 
@@ -24,7 +24,7 @@
               <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
               <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
               <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
-              <li><a href="{{route('lavora')}}">Lavora Con Noi</a></li>
+              <li><a href="{{route('lavora')}}">Lavora con noi</a></li>
             </ul>
 
         </div>
@@ -38,7 +38,7 @@
           </p>
         </div>
 
-      
+
       </div>
     </div>
 </footer>
