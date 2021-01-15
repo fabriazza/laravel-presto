@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RevisorController;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,12 @@ Route::post('/revisor/product/{id}/undo', [RevisorController::class, 'undo'])->n
 Route::get('/lavoraConNoi', [MailController::class , 'lavora'])->name('lavora');
 
 Route::post('/lavora/send',[MailController::class , 'candidato'])->name('lavora.send');
+
+Route::post('/product/images/upload',[ProductController::class, 'uploadImage'])->name('products.images.upload');
+
+Route::delete('/product/images/remove',[ProductController::class, 'removeImage'])->name('products.images.remove');
+
+Route::get('/product/images',[ProductController::class, 'getImages'])->name('products.images');
 
 Route::get('/thankyou', [MailController::class , 'thankyou'])->name('lavora.thankyou');
 
