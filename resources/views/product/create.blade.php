@@ -9,7 +9,6 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-8">
-                <h1>{{$uniqueSecret}}</h1>
                 <form enctype="multipart/form-data" method="POST" action="{{ route('product.store') }}">
                     @csrf
                     <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
@@ -51,7 +50,7 @@
                             <div class="dropzone" id="drophere"></div>
                         </div>
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary mt-3">{{ __('ui.create')}}</button>
                 </form>
             </div>
