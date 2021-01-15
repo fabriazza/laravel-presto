@@ -45,6 +45,10 @@ Route::post('/lavora/send',[MailController::class , 'candidato'])->name('lavora.
 
 Route::post('/product/images/upload',[ProductController::class, 'uploadImage'])->name('products.images.upload');
 
+Route::delete('/product/images/remove',[ProductController::class, 'removeImage'])->name('products.images.remove');
+
+Route::get('/product/images',[ProductController::class, 'getImages'])->name('products.images');
+
 Route::get('/thankyou', [MailController::class , 'thankyou'])->name('lavora.thankyou');
 
 Route::get('/product/show/{productid}',[ProductController::class, 'show'])->name('product.show');
