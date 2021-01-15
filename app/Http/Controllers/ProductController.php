@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Http\Requests\ProductRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -42,6 +45,16 @@ class ProductController extends Controller
 
     }
 
+    public function uploadImage(Request $request)
+    {
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+        session()->push("images.{$uniqueSecret}", $fileName);
+        return response()->json(
+            session()->get("images.{$uniqueSecret}")
+        );
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -60,9 +73,17 @@ class ProductController extends Controller
         ]);
         
         $uniqueSecret = $request->input('uniqueSecret');
-        
-        
-
+        $images = session()->get("images.{$uniqueSecret}");
+        foreach ($images as $image) {
+            $i = new ProductImage();
+            $fileName = basename($image);
+            $newFileName = "/public/products/{$product->id}/{$fileName}";
+            Storage::move($image,$newFileName);
+            $i->file = $newFileName;
+            $i->product_id = $product->id;
+            $i->save();
+        }
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect(route('product.thankyou', compact('product')));
     }
 

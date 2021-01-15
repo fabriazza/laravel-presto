@@ -4,10 +4,11 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
+use App\Models\ProductImage;
+use Laravel\Scout\Searchable;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
-use Laravel\Scout\Searchable;
 
 class Product extends Model
 {
@@ -43,6 +44,9 @@ class Product extends Model
         return Product::where('is_accepted', null)->count();
     }
 
-
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
 }
 
