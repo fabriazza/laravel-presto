@@ -1,12 +1,11 @@
 <div class="card border-custom shadow card-border border-0 mb-3">
     <div class="row no-gutters border-primary">
         <div class="col-md-4">
-            {{ dd($images) }}
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach ($images as $image)
-                    <div class="carousel-item active">
-                        <img src="{{ Storage::url($image->file) }}" class="card-img img-custom rounded-0 rounded-start" alt="...">
+                    <div class="carousel-item {{$loop->first ? 'active' : ''}}">
+                        <img src="{{ Storage::url($image) }}" class="card-img img-custom rounded-0 rounded-start" alt="...">
                       </div>
                     @endforeach
                 </div>
@@ -31,9 +30,9 @@
                             <p class="card-text text-soft my-3"><i class="far fa-credit-card text-accent"></i> {{ $price }} €</p>
                         </div>
                         <div class="col-12 col-md-6 py-4">
-                                <small class="card-text"><i class="fas fa-user text-accent"></i> {{ $user }}</small>
-                                <small class="card-text ml-1"><i class="fas fa-clock text-accent"></i> {{ $createdat}}</small>
-                                <a href="{{route('product.show', $productid)}}" class="btn bg-accent text-soft text-center mt-3">{{ __('ui.showproduct') }}</a>
+                            <small class="card-text"><i class="fas fa-user text-accent"></i> {{ $user }}</small>
+                            <small class="card-text ml-1"><i class="fas fa-clock text-accent"></i> {{ $createdat}}</small>
+                            <a href="{{route('product.show', $productid)}}" class="btn bg-accent text-soft text-center mt-3">{{ __('ui.showproduct') }}</a>
                         </div>
                     </div>
                 </div>

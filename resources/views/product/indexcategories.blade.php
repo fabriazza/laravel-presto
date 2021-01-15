@@ -14,8 +14,9 @@
            createdat="{{ $product->created_at->format('d/m/y') }}"
            categoryid="{{ $product->category->id }}"
            productid="{{$product->id}}"
+           :images="$product->images->pluck('file')"
            />
-           
+
         </div>
         @endforeach
     </div>
