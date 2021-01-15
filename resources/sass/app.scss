@@ -10,10 +10,9 @@
 // Style
 @import 'style';
 
-<<<<<<< HEAD
-//bandierine
-@import '~flag-icon-css/sass/flag-icon';
-=======
 // Flags
 @import '~flag-icon-css/sass/flag-icon';
->>>>>>> a1a47242d41844a9f52a4bbc27b783309d6d2ab1
+
+// css dropzone
+@import '~dropzone/dist/basic';
+@import '~dropzone/dist/dropzone';

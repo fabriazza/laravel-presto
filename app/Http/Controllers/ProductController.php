@@ -25,15 +25,21 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    
+    
+
+
+     public function create()
     {
         if(!Auth::check()){
             return view('product.loginregister');
         }
         else {
             $categories = Category::all();
-            return view('product.create', compact('categories'));
+            $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+            return view('product.create', compact('categories', 'uniqueSecret'));
         }
+
     }
 
     /**
@@ -49,8 +55,13 @@ class ProductController extends Controller
             'description' => $request->input('description'),
             'price' => $request->input('price'),
             'category_id' => $request->input('category_id'),
-            'user_id' => Auth::id()
+            'user_id' => Auth::id(),
+            
         ]);
+        
+        $uniqueSecret = $request->input('uniqueSecret');
+        
+        
 
         return redirect(route('product.thankyou', compact('product')));
     }
@@ -105,4 +116,8 @@ class ProductController extends Controller
     {
         return view('product.thankyou', compact('product'));
     }
+
+    
+
+
 }

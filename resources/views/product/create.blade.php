@@ -9,8 +9,10 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-8">
+                <h1>{{$uniqueSecret}}</h1>
                 <form enctype="multipart/form-data" method="POST" action="{{ route('product.store') }}">
                     @csrf
+                    <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
                     <div class="form-group">
                         <label for="title">{{ __('ui.title')}}</label>
                         <input type="text" name="title" class="form-control">
@@ -43,10 +45,13 @@
                     @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
-                    {{-- <div class="form-group">
-                        <label for="img">Immagine del post</label>
-                        <input type="file" name="img" class="form-control">
-                    </div> --}}
+                    <div class="form-group row">
+                        <label for="images" class="col-md-12 col-form-label">Immagini</label>
+                        <div class="col-md-12">
+                            <div class="dropzone" id="drophere"></div>
+                        </div>
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary mt-3">{{ __('ui.create')}}</button>
                 </form>
             </div>
