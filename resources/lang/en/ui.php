@@ -40,6 +40,9 @@
         'rejected' => 'Rejected announcements',
         'listempty' => 'Your announcements list is empty',
         'check' => 'Check the announcements',
-        'undo' => 'Restore the announcements',
-        'wordnotfind' => 'There are no announcements for this word'
+        'action' => 'Action',
+        'wordnotfind' => 'There are no announcements for this word',
+        'images' => 'Images',
+        'undo' => 'Undo',
+        'delete' => 'Delete'
     ];

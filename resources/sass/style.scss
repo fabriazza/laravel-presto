@@ -350,3 +350,13 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
     min-width: 3rem;
     padding: 0.5rem 1rem;
 }
+
+.drag-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #ffd5b5 !important;
+    border-width: 4px !important;
+    border-radius: 16px !important;
+    border-style: dashed !important;
+}
