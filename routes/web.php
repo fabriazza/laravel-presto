@@ -39,6 +39,8 @@ Route::post('/revisor/product/{id}/accept', [RevisorController::class, 'accept']
 
 Route::post('/revisor/product/{id}/undo', [RevisorController::class, 'undo'])->name('revisor.undo');
 
+Route::delete('/revisor/product/{product}/delete', [ProductController::class, 'destroy'])->name('revisor.delete');
+
 Route::get('/lavoraConNoi', [MailController::class , 'lavora'])->name('lavora');
 
 Route::post('/lavora/send',[MailController::class , 'candidato'])->name('lavora.send');

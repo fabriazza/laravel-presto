@@ -10315,6 +10315,16 @@ h3 {
   padding: 0.5rem 1rem;
 }
 
+.drag-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #ffd5b5 !important;
+  border-width: 4px !important;
+  border-radius: 16px !important;
+  border-style: dashed !important;
+}
+
 .flag-icon-background, .flag-icon {
   background-size: contain;
   background-position: 50%;

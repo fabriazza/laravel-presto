@@ -14,14 +14,14 @@
                     <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
                     <div class="form-group">
                         <label for="title">{{ __('ui.title')}}</label>
-                        <input type="text" name="title" class="form-control">
+                        <input type="text" name="title" class="form-control" value="{{old('title')}}">
                         @error('title')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="description">{{ __('ui.desc')}}</label>
-                        <textarea type="text" name="description" class="form-control" cols="30" rows="10"></textarea>
+                        <textarea type="text" name="description" class="form-control" cols="30" rows="10">{{old('description')}}</textarea>
                         @error('description')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -36,7 +36,7 @@
                     </div>
                     <label for="price">{{ __('ui.price')}}</label>
                     <div class="input-group mb-3 w-50">
-                        <input type="text" name="price" class="form-control">
+                        <input type="text" name="price" class="form-control" value="{{old('price')}}">
                         <div class="input-group-append">
                           <span class="input-group-text">€</span>
                         </div>
@@ -45,13 +45,13 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <div class="form-group row">
-                        <label for="images" class="col-md-12 col-form-label">Immagini</label>
+                        <label for="images" class="col-md-12 col-form-label">{{ __('ui.images')}}</label>
                         <div class="col-md-12">
-                            <div class="dropzone" id="drophere"></div>
+                            <div class="dropzone drag-area" id="drophere"></div>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-3">{{ __('ui.create')}}</button>
+                    <button type="submit" class="btn btn-accent mt-3">{{ __('ui.create')}}</button>
                 </form>
             </div>
         </div>

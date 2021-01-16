@@ -40,6 +40,9 @@
         'rejected' => 'Anuncios rechazados',
         'listempty' => 'Tu lista de anuncios está vacía',
         'check' => 'Verifique los anuncios',
-        'undo' => 'Restaurar los anuncios',
-        'wordnotfind' => 'No hay anuncios para esta palabra'
+        'action' => 'Accion',
+        'wordnotfind' => 'No hay anuncios para esta palabra',
+        'images' => 'Imagines',
+        'undo' => 'Restaurar',
+        'delete' => 'Eliminar'
     ];
