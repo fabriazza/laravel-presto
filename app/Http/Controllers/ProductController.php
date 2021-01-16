@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\ProductRequest;
+use App\Jobs\ResizeImage;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -28,8 +29,8 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
-    
+
+
 
 
      public function create(Request $request)
@@ -49,6 +50,9 @@ class ProductController extends Controller
     {
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+
+        dispatch(new ResizeImage($fileName, 120, 120));
+
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json(
             [
@@ -64,7 +68,7 @@ class ProductController extends Controller
         Storage::delete($fileName);
         return response()->json('ok');
     }
-    
+
 
     /**
      * Store a newly created resource in storage.
@@ -80,9 +84,9 @@ class ProductController extends Controller
             'price' => $request->input('price'),
             'category_id' => $request->input('category_id'),
             'user_id' => Auth::id(),
-            
+
         ]);
-        
+
         $uniqueSecret = $request->input('uniqueSecret');
         $images = session()->get("images.{$uniqueSecret}", []);
         $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
@@ -92,6 +96,10 @@ class ProductController extends Controller
             $fileName = basename($image);
             $newFileName = "public/products/{$product->id}/{$fileName}";
             Storage::move($image,$newFileName);
+
+            dispatch(new ResizeImage($newFileName, 300, 150));
+            dispatch(new ResizeImage($newFileName, 300, 300));
+
             $i->file = $newFileName;
             $i->product_id = $product->id;
             $i->save();
@@ -112,7 +120,7 @@ class ProductController extends Controller
         foreach ($images as $image){
             $data[] = [
                 'id' => $image,
-                'src' => Storage::url($image)
+                'src' => ProductImage::getUrlByFilePath($image, 120, 120)
             ];
         }
         return response()->json($data);
@@ -162,15 +170,18 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $images = ($product->images);
+        foreach($images as $image){
+            $image->delete();
+        }
+        $directory = "app/public/products/$product->id";
+        dd($directory);
+        Storage::deleteDirectory($directory);
+        $product->delete();
     }
 
     public function thankyou(Product $product)
     {
         return view('product.thankyou', compact('product'));
     }
-
-    
-
-
 }

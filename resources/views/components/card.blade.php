@@ -5,7 +5,7 @@
                 <div class="carousel-inner">
                     @foreach ($images as $image)
                     <div class="carousel-item {{$loop->first ? 'active' : ''}}">
-                        <img src="{{ Storage::url($image) }}" class="card-img img-custom rounded-0 rounded-start" alt="...">
+                        <img src="{{ $image->getUrl(300, 300) }}" class="card-img img-custom rounded-0 rounded-start">
                       </div>
                     @endforeach
                 </div>
@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-12 mx-0">
                     <h4 class="card-title">{{ $title }}</h4>
-                    <p class="card-text">{{ $description }}</p>
+                    <p class="card-text">{{ substr($description, 0, 190) . " [...]" }}</p>
                     <div class="row">
                         <div class="col-12 col-md-6 py-4">
                             <span class="text-accent"><i class="fas fa-tags"></i> </span><a href="{{route('category.index', $categoryid)}}" class=" text-soft link-custom text-capitalize">{{ $categoryname }}</a>

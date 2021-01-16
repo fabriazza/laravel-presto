@@ -40,6 +40,9 @@
         'rejected' => 'Prodotti rifiutati',
         'listempty' => 'La lista dei prodotti è vuota',
         'check' => 'Verifica i prodotti',
-        'undo' => "Ripristina l'annuncio",
-        'wordnotfind' => 'Non ci sono prodotti che soddisfano questa ricerca'
+        'action' => "Azioni",
+        'wordnotfind' => 'Non ci sono prodotti che soddisfano questa ricerca',
+        'images' => 'Immagini',
+        'undo' => 'Ripristina',
+        'delete' => 'Elimina'
     ];

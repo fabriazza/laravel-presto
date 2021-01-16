@@ -7,7 +7,6 @@
                 <h1 class="text-success">{{ __('ui.congrats')}}, {{ $product->user->name }} {{ __('ui.congrats2')}}</h1>
             </div>
         </div>
-        {{-- <h1>{{ dd($product->images->pluck('file')) }}</h1> --}}
         <div class="row justify-content-center align-items-center">
             <div class="col-10">
                <x-card
@@ -19,7 +18,7 @@
                createdat="{{ $product->created_at->format('d/m/y') }}"
                categoryid="{{ $product->category->id }}"
                productid="{{ $product->id }}"
-               :images="$product->images->pluck('file')"
+               :images="$product->images"
                />
             </div>
         </div>
