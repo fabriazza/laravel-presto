@@ -44,5 +44,6 @@
         'wordnotfind' => 'No hay anuncios para esta palabra',
         'images' => 'Imagines',
         'undo' => 'Restaurar',
-        'delete' => 'Eliminar'
+        'delete' => 'Eliminar',
+        'welcomecategories' => 'Todos los anuncios de la categoría:'
     ];

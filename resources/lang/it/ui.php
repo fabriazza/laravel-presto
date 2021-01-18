@@ -44,5 +44,6 @@
         'wordnotfind' => 'Non ci sono prodotti che soddisfano questa ricerca',
         'images' => 'Immagini',
         'undo' => 'Ripristina',
-        'delete' => 'Elimina'
+        'delete' => 'Elimina',
+        'welcomecategories' => 'Tutti gli annunci della categoria:'
     ];
