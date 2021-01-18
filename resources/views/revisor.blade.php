@@ -64,24 +64,24 @@
                 </thead>
                 <tbody>
                     @foreach ($scartati as $scartato)
-                  <tr>
-                    <th scope="row">{{$scartato->id}}</th>
-                    <td>{{$scartato->title}}</td>
-                    <td>{{substr($scartato->description, 0, 20) . " [...]"}}</td>
-                    <td>{{$scartato->user->name}}</td>
-                    <td class="d-flex justify-content-start align-items-center">
-                        <form action="{{ route('revisor.delete', $scartato) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger font-weight-bold text-white mr-2">{{ __('ui.delete')}}</button>
-                        </form>
-                        <form method="post" action="{{route('revisor.undo', $scartato->id )}}">
-                            @csrf
-                            <button type="submit" class="btn bg-accent text-soft">{{__('ui.undo')}}</button>
-                        </form>
-                    </td>
-                  </tr>
-                  @endforeach
+                    <tr>
+                        <th scope="row">{{$scartato->id}}</th>
+                        <td>{{$scartato->title}}</td>
+                        <td>{{substr($scartato->description, 0, 20) . " [...]"}}</td>
+                        <td>{{$scartato->user->name}}</td>
+                        <td class="d-flex justify-content-start align-items-center">
+                            <form action="{{ route('revisor.delete', $scartato) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger font-weight-bold text-white mr-2">{{ __('ui.delete')}}</button>
+                            </form>
+                            <form method="post" action="{{route('revisor.undo', $scartato->id )}}">
+                                @csrf
+                                <button type="submit" class="btn bg-accent text-soft">{{__('ui.undo')}}</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
               </table>
         </div>

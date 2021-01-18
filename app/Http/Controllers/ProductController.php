@@ -174,9 +174,8 @@ class ProductController extends Controller
         foreach($images as $image){
             $image->delete();
         }
-        $directory = "app/public/products/$product->id";
-        dd($directory);
-        Storage::deleteDirectory($directory);
+
+        File::deleteDirectory(storage_path("/app/public/products/{$product->id}"));
         $product->delete();
     }
 
