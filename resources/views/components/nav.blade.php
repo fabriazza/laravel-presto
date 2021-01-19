@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-md bg-accent shadow-sm">
+<nav class="navbar navbar-expand-md bg-accent shadow fixed-top">
     <div class="container">
         <a class="navbar-brand w-25 nav-link text-soft" href="{{ url('/') }}">
-            <img id="prestonav" src="https://i.ibb.co/vqGRscR/Senza-titolo-1.png" alt="presto" border="0">
+            <img class="prestonav" src="https://i.ibb.co/vqGRscR/Senza-titolo-1.png" alt="presto" border="0">
         </a>
         <button class="navbar-toggler text-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon p-1"><i class="fas fa-bars"></i></span>
@@ -16,34 +16,12 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto d-flex align-items-center  text-soft">
                 <li class="nav-item dropdown d-flex align-items-center">
-
                     <!-- Button trigger modal -->
                     <button type="button" class="btn text-soft" data-toggle="modal" data-target="#exampleModalCenter">
                         {{ __('ui.category') }}
                     </button>
+                </li>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content bg-accent text-center">
-                            <div class="modal-header bg-main">
-                            <h5 class="modal-title text-white" id="exampleModalLongTitle">{{ __('ui.categorycho') }}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <div class="modal-body shadow-lg">
-                                @foreach ($categories as $category)
-                                    <a class="dropdown-item text-accent bg-main text-capitalize" href="{{route('category.index', $category)}}">{{$category->name}}</a>
-                                @endforeach
-                            </div>
-                            <div class="modal-footer bg-main">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('ui.close') }}</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </li>
                 <!-- Authentication Links -->
                 @guest
                 @if (Route::has('login'))

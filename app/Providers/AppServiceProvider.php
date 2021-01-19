@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Pagination\Paginator;
@@ -35,6 +36,10 @@ class AppServiceProvider extends ServiceProvider
         if(Schema::hasTable('products')){
             $products = Product::all();
             View::share(compact('products'));
+        }
+        if(Schema::hasTable('users')){
+            $users = User::all();
+            View::share(compact('users'));
         }
         Paginator::useBootstrap();
     }

@@ -4,6 +4,17 @@ $color-accent:#E57720;
 $color-soft:#f7f7f7;
 $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1) 41%, rgba(159,199,207,1) 100%);
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+body {
+    background-color: #f1eae3;
+}
 
 .text-main{
   color: $main-color;
@@ -41,6 +52,10 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
   background-color: $color-soft;
 }
 
+.border-second {
+    border-color: $second-color;
+}
+
 .btn-accent {
   padding: 0.6rem 1rem 0.6rem 1rem;
   background-color: $main-color;
@@ -53,22 +68,23 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
     background-color: $color-accent;
   }
 }
+
 .btn-accent1 {
   color: white;
   background-color: $color-accent;
 }
-.btn-accent:hover {
-  -webkit-box-shadow: 0px 5px 14px 0px rgba(249,86,25,0.7);
-  -moz-box-shadow:    0px 5px 14px 0px rgba(249,86,25,0.7);
-  box-shadow:         0px 5px 14px 0px rgba(249,86,25,0.7);
-  color: #ffffff !important;
 
-  &.secondary {
+.btn-accent:hover {
     -webkit-box-shadow: 0px 5px 14px 0px rgba(33, 54, 77, 0.671);
     -moz-box-shadow:    0px 5px 14px 0px rgba(33, 54, 77, 0.671);
     box-shadow:         0px 5px 14px 0px rgba(33, 54, 77, 0.671);
-  }
+    color: #ffffff !important;
 
+    &.secondary {
+        -webkit-box-shadow: 0px 5px 14px 0px rgba(249,86,25,0.7);
+        -moz-box-shadow:    0px 5px 14px 0px rgba(249,86,25,0.7);
+        box-shadow:         0px 5px 14px 0px rgba(249,86,25,0.7);
+    }
 }
 
 .btn-accent i {
@@ -83,6 +99,14 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
   margin-right: 10px;
 }
 
+.text-0-5 {
+    font-size: 0.5rem;
+}
+
+.text-0-8 {
+    font-size: 0.8rem;
+}
+
 .text-1 {
   font-size: 1rem;
 }
@@ -94,10 +118,12 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
 .text-2 {
   font-size: 2rem;
 }
+
 .link-custom:hover{
   color: $color-soft !important;
   text-decoration: none !important;
 }
+
 .img-custom{
   width: 100%;
   height: 100%;
@@ -105,6 +131,7 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
   border-top-left-radius:10px !important ;
   border-bottom-left-radius:10px !important;
 }
+
 .nav-link:hover{
   color: $second-color !important;
 }
@@ -112,6 +139,7 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
   height:150px;
   overflow-y: scroll;
 }
+
 /* width */
 .dropdown-menu-right-category::-webkit-scrollbar {
   width: 20px;
@@ -144,12 +172,18 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
 }
 .title-section {
   padding-top: 12vh;
-  // background: linear-gradient(0deg, $color-accent 0%, $main-color 80%);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(229,119,32,1) 35%, rgba(39,46,48,1) 100%);
+  background: linear-gradient(180deg, rgba(39,46,48,1) 7%, rgba(229,119,32,1) 45%, rgba(241,234,227,1) 98%);
 }
 .title-section-img{
   width: 80%;
 }
+.category-section {
+    padding-top: 12vh;
+    background: linear-gradient(180deg, rgba(39,46,48,1) 7%, rgba(229,119,32,1) 45%, rgba(241,234,227,1) 98%);
+}
+.category-section-img{
+    width: 60%;
+  }
 .search-block {
   position: absolute;
   bottom: -75px;
@@ -209,7 +243,7 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color: $color-accent;
   text-decoration:none;
 }
 .footer-links.inline li
@@ -314,9 +348,15 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
 {
   background-color:#ea4c89
 }
-#prestonav {
+.prestonav {
   width: 50%;
 }
+
+.prestofoot {
+    width: 30%;
+    padding-bottom: 2em;
+}
+
 @media (max-width:767px)
 {
   .img-custom{
@@ -359,4 +399,18 @@ $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1
     border-width: 4px !important;
     border-radius: 16px !important;
     border-style: dashed !important;
+}
+
+#numeri {
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(1,1,1,0.6755077030812324) 50%, rgba(0,0,0,0) 100%), url('/img/numbers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.close-custom {
+    color: #fff !important;
+}
+
+#app {
+    min-height: 60vh;
 }

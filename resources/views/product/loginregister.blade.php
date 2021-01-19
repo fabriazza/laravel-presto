@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container py-5 mt-3">
+    <div class="row justify-content-center pt-5">
         <div class="col-12 col-md-5 m-0 mr-md-2">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header bg-accent text-white">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -53,12 +53,12 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-accent secondary">
                                     {{ __('Login') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="text-secondary text-0-8 ml-2" href="{{ route('password.request') }}">
                                         {{ __('ui.password') }}
                                     </a>
                                 @endif
@@ -71,7 +71,7 @@
 
         <div class="col-12 col-md-5 m-0 ml-md-2">
             <div class="card">
-                <div class="card-header">{{ __('ui.register') }}</div>
+                <div class="card-header bg-main text-white">{{ __('ui.register') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -129,7 +129,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-accent">
                                     {{ __('ui.register') }}
                                 </button>
                             </div>
