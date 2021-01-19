@@ -264,41 +264,19 @@ body {
   border-radius:100%;
   background-color:#33353d
 }
-.copyright-text
-{
+.copyright-text {
   margin:0
 }
-@media (max-width:991px)
-{
-  .site-footer [class^=col-]
-  {
-    margin-bottom:30px
-  }
-}
-@media (max-width:767px)
-{
-  .site-footer
-  {
-    padding-bottom:0
-  }
-  .site-footer .copyright-text,.site-footer .social-icons
-  {
-    text-align:center
-  }
-}
-.social-icons
-{
+.social-icons {
   padding-left:0;
   margin-bottom:0;
   list-style:none
 }
-.social-icons li
-{
+.social-icons li {
   display:inline-block;
   margin-bottom:4px
 }
-.social-icons li.title
-{
+.social-icons li.title {
   margin-right:15px;
   text-transform:uppercase;
   color:#96a2b2;
@@ -357,35 +335,6 @@ body {
     padding-bottom: 2em;
 }
 
-@media (max-width:767px)
-{
-  .img-custom{
-    border-top-left-radius:10px !important ;
-    border-top-right-radius:10px !important;
-    border-bottom-left-radius:0px !important;
-  }
-  .border-card{
-    border-top-right-radius:0px !important ;
-    border-bottom-right-radius:10px !important;
-    border-bottom-left-radius:10px !important;
-  }
-  #prestonav{
-    width: 100%;
-  }
-  .social-icons li.title
-  {
-    display:block;
-    margin-right:0;
-    font-weight:600
-  }
-}
-@media (max-width:990px)
-{
-  #prestonav {
-    width: 75%;
-  }
-}
-
 .flags-dropdown {
     min-width: 3rem;
     padding: 0.5rem 1rem;
@@ -413,4 +362,126 @@ body {
 
 #app {
     min-height: 60vh;
+}
+
+.circle-number-box {
+    padding: 1rem;
+    width: 120%;
+    height: 120%;
+    border: 1px solid var(--main-color);
+    border-radius: 100%;
+}
+
+.wrapper-circle-box {
+    width: 100px;
+    height: 100px;
+    transform: rotateZ(-90deg);
+}
+
+.wrapperProgress {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+.circle-label-1 {
+    position: absolute;
+    font-weight: 600;
+    top: 40px;
+    left: 72px;
+}
+.circle-label-2 {
+    position: absolute;
+    font-weight: 600;
+    top: 40px;
+    left: 66px;
+}
+.circle-label-3 {
+    position: absolute;
+    font-weight: 600;
+    top: 40px;
+    left: 71px;
+}
+.circle-label-4 {
+    position: absolute;
+    font-weight: 600;
+    top: 40px;
+    left: 64px;
+}
+.circle-label-5 {
+    position: absolute;
+    font-weight: 600;
+    top: 40px;
+    left: 76px;
+}
+
+@media (max-width:990px) {
+  #prestonav {
+    width: 75%;
+  }
+
+  .site-footer [class^=col-] {
+    margin-bottom:30px
+  }
+}
+
+@media screen and (max-width:568px){
+    .wrapperProgress {
+        overflow: scroll;
+        justify-content: flex-start;
+        padding-top: 2em;
+    }
+
+    .circle-label-1 {
+        top: 39px;
+        left: 62px;
+    }
+    .circle-label-2 {
+        top: 39px;
+        left: 55px;
+    }
+    .circle-label-3 {
+        top: 39px;
+        left: 61px;
+    }
+    .circle-label-4 {
+        top: 39px;
+        left: 53px;
+    }
+    .circle-label-5 {
+        top: 39px;
+        left: 66px;
+    }
+}
+
+@media (max-width:767px) {
+  .img-custom {
+    border-top-left-radius:10px !important ;
+    border-top-right-radius:10px !important;
+    border-bottom-left-radius:0px !important;
+  }
+  .border-card {
+    border-top-right-radius:0px !important ;
+    border-bottom-right-radius:10px !important;
+    border-bottom-left-radius:10px !important;
+  }
+
+  #prestonav {
+    width: 100%;
+  }
+
+  .social-icons li.title {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+
+  .site-footer {
+    padding-bottom:0
+  }
+
+  .site-footer .copyright-text,.site-footer .social-icons {
+    text-align:center
+  }
 }

@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\ProductRequest;
-use App\Jobs\ResizeImage;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 
 class ProductController extends Controller
 {
@@ -103,6 +105,9 @@ class ProductController extends Controller
             $i->file = $newFileName;
             $i->product_id = $product->id;
             $i->save();
+
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
+            dispatch(new GoogleVisionLabelImage($i->id));
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect(route('product.thankyou', compact('product')));
@@ -177,6 +182,8 @@ class ProductController extends Controller
 
         File::deleteDirectory(storage_path("/app/public/products/{$product->id}"));
         $product->delete();
+
+        return redirect()->back()->with('message', "OK");
     }
 
     public function thankyou(Product $product)

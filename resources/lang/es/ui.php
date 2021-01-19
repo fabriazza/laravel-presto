@@ -45,5 +45,6 @@
         'images' => 'Imagines',
         'undo' => 'Restaurar',
         'delete' => 'Eliminar',
-        'welcomecategories' => 'Todos los anuncios de la categoría:'
+        'welcomecategories' => 'Todos los anuncios de la categoría:',
+        'deletemessage' => 'Anuncio eliminado correctamente'
     ];

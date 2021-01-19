@@ -45,5 +45,6 @@
         'images' => 'Images',
         'undo' => 'Undo',
         'delete' => 'Delete',
-        'welcomecategories' => 'All announcements in the category:'
+        'welcomecategories' => 'All announcements in the category:',
+        'deletemessage' => 'Announcement deleted with success'
     ];
