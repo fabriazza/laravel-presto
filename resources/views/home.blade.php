@@ -31,7 +31,7 @@
 <!-- NUMERI + RECENSIONI -->
 <section id="numeri" class="container-fluid py-5">
     <div class="p-5">
-      <h2 class="text-center mb-5 text-white">I nostri numeri</h2>
+      <h2 class="text-center mb-5 text-white">{{ __('ui.ournumbers')}}</h2>
       <div class="row d-flex justify-content-center">
 
         <div class="col-md-6 col-lg-3 mb-4 text-center">
@@ -39,7 +39,7 @@
             <i class="fas fa-box-open text-accent"></i>
             <span class="d-inline-block text-white count-up" data-from="0" data-to="100" data-time="2000">{{ count($products) }}</span>
           </h4>
-          <p class="font-weight-normal  text-white">Annunci</p>
+          <p class="font-weight-normal  text-white"> {{ __('ui.announcements')}}</p>
         </div>
 
         <div class="col-md-6 col-lg-3 mb-4 text-center">
@@ -47,7 +47,7 @@
             <i class="fas fa-users text-accent"></i>
             <span class="d-inline-block text-white count1" data-from="0" data-to="250" data-time="2000">{{ count($users) }}</span>
           </h4>
-          <p class="font-weight-normal text-white">Utenti</p>
+          <p class="font-weight-normal text-white"> {{ __('ui.users')}}</p>
         </div>
 
         <div class="col-md-6 col-lg-3 mb-4 text-center">
@@ -55,7 +55,7 @@
             <i class="fas fa-handshake text-accent"></i>
             <span class="d-inline-block text-white count2" data-from="0" data-to="330" data-time="2000">23750</span>
           </h4>
-          <p class="font-weight-normal text-white">Transazioni</p>
+          <p class="font-weight-normal text-white"> {{ __('ui.transactions')}}</p>
         </div>
 
         <div class="col-md-6 col-lg-3 mb-4 text-center">
@@ -63,7 +63,7 @@
             <i class="fas fa-hand-holding-usd text-accent"></i>
             <span class="d-inline-block text-white count3" data-from="0" data-to="430" data-time="2000">€ 1.3Ml</span>
           </h4>
-          <p class="font-weight-normal text-white">Totale vendite</p>
+          <p class="font-weight-normal text-white"> {{ __('ui.sells')}}</p>
         </div>
       </div>
     </div>
@@ -73,23 +73,23 @@
 <section id="newsletter" class="container py-5">
     <div class="row align-items-center justify-content-center">
       <div class="col-12 text-center">
-        <h2 class="pt-4 text-accent">Iscriviti alla Newsletter</h2>
+        <h2 class="pt-4 text-accent">{{ __('ui.newsletter')}}</h2>
       </div>
       <div class="col-12 col-md-8 mt-2">
         <form>
           <div class="form-group">
-            <label for="inputEmail">Indirizzo email</label>
+            <label for="inputEmail">{{ __('ui.emailaddress')}}</label>
             <div class="input-group mb-1">
               <input type="text" class="form-control py-4" placeholder="Inserisci la tua email..." aria-label="Inserisci la tua email..." aria-describedby="button-addon2">
               <div class="input-group-append">
-                <button class="btn btn-accent" type="submit" id="button-addon2">Iscrivimi</button>
+                <button class="btn btn-accent" type="submit" id="button-addon2">{{ __('ui.signin')}}</button>
               </div>
             </div>
-            <small id="emailHelp" class="form-text text-muted">Non condivideremo mai la tua email con nessun altro.</small>
+            <small id="emailHelp" class="form-text text-muted">{{ __('ui.privacy')}}</small>
           </div>
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="privacyCheckbox">
-            <label class="form-check-label" for="privacyCheckbox">Accetto le condizioni della <a href="#" class="text-accent">Privacy policy</a></label>
+            <label class="form-check-label" for="privacyCheckbox">{{ __('ui.conditions')}}<a href="#" class="text-accent">Privacy policy</a></label>
           </div>
         </form>
       </div>
