@@ -46,5 +46,18 @@
         'undo' => 'Undo',
         'delete' => 'Delete',
         'welcomecategories' => 'All announcements in the category:',
-        'deletemessage' => 'Announcement deleted with success'
+        'deletemessage' => 'Announcement deleted with success',
+        'users' => 'Users',
+        'transactions' => 'Transactions',
+        'sells' => 'Total sales',
+        'announcements' => 'Announcements',
+        'newsletter' => 'Subscribe to the newsletter',
+        'emailaddress' => 'Email Address',
+        'signin' => 'Sign In',
+        'privacy' => 'We will not share your informations with nobody else',
+        'conditions' => 'I accept the terms of the',
+        'ournumbers' => 'Our Numbers'
+
+
+
     ];
