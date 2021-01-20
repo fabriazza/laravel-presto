@@ -46,5 +46,15 @@
         'undo' => 'Ripristina',
         'delete' => 'Elimina',
         'welcomecategories' => 'Tutti gli annunci della categoria:',
-        'deletemessage' => 'Annuncio eliminato con successo'
+        'deletemessage' => 'Annuncio eliminato con successo',
+        'users' => 'Utenti',
+        'transactions' => 'Transazioni',
+        'sells' => 'Totale vendite',
+        'announcements' => 'Annunci',
+        'newsletter' => 'Iscriviti alla newsletter',
+        'emailaddress' => 'Indirizzo Email',
+        'signin' => 'Iscrivimi',
+        'privacy' => 'Non condivideremo mai la tua email con nessun altro.',
+        'conditions' => 'Accetto i termini della',
+        'ournumbers' => 'I nostri numeri'
     ];
