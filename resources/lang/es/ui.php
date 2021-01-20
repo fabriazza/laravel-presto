@@ -56,5 +56,9 @@
         'signin' => 'Inscribeme',
         'privacy' => 'Nunca compartiremos su correo electronico con nadie mas',
         'conditions' => 'Acepto los terminos de la ',
-        'ournumbers' => 'Nuestros numeros'
+        'ournumbers' => 'Nuestros numeros',
+        'welcomeindex'=>'Todos nuestros anuncios',
+        'product'=>'Anuncios',
+        'phone'=>'Telefono',
+        'img' =>'Foto de Prefil'
     ];

@@ -74,7 +74,7 @@
                 <div class="card-header bg-main text-white">{{ __('ui.register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -105,6 +105,25 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('ui.phone') }}</label>
+                            <div class="col-md-6">
+                                <input id="tel" type="tel" class="form-control" name="tel" value="{{ old('tel') }}" required autocomplete="tel">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="img" class="col-md-4 col-form-label text-md-right">{{ __('ui.img') }}</label>
+                            <div class="col-md-6">
+                                <input id="img" type="file" class="form-control @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}" required autocomplete="img">    
+                                @error('img')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

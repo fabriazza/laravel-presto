@@ -58,3 +58,5 @@ Route::get('/product/show/{productid}',[ProductController::class, 'show'])->name
 Route::get('/search',[HomeController::class, 'search'])->name('search');
 
 Route::post('/locale/{locale}', [HomeController::class, 'locale'])->name('locale');
+
+Route::get('/product/index', [ProductController::class, 'index'])->name('product.index');
