@@ -14,6 +14,7 @@ use App\Http\Requests\ProductRequest;
 use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
+use App\Jobs\Watermark;
 
 class ProductController extends Controller
 {
@@ -106,9 +107,11 @@ class ProductController extends Controller
 
             GoogleVisionSafeSearchImage::withChain([
                 new GoogleVisionLabelImage($i->id),
+                new Watermark($i->id),
                 new GoogleVisionRemoveFaces($i->id),
                 new ResizeImage($newFileName, 300, 150),
                 new ResizeImage($newFileName, 300, 300),
+            
             ])->dispatch($i->id);
             
         }
