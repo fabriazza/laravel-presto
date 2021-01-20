@@ -14,7 +14,9 @@
         'category' => 'Categories',
         'categorycho' => 'Choose Categories',
         'wus' => 'What you want to search?',
-        'se' => 'Search',
+        'se' => 'Search results for the word',
+        'search' => 'Search',
+        'searchplaceholder' => 'What deal are you looking for today?',
         'close' => 'Close',
         'register' => 'Register',
         'insert' => 'Sell',
@@ -60,8 +62,6 @@
         'welcomeindex'=>'All our announcements',
         'product'=>'Announcements',
         'phone'=>'Telephone',
-        'img' =>'Profile Image'
-
-
-
+        'img' =>'Profile Image',
+        'noproducts' => 'No announcements finded for the category selected'
     ];

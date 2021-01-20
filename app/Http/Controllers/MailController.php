@@ -13,18 +13,17 @@ class MailController extends Controller
     public function lavora()
     {
         if(Auth::user()){
-
             return view('lavora');
         };
-        return redirect('/register');
+        return view('product.loginregister');
     }
     public function candidato(CandidatoRequest $request)
     {
-        
+
         $name = $request->input('name');
         $mail = $request->input('mail');
         $message = $request->input('message');
-        
+
         $bag=compact('name','mail','message');
 
         $email= new RevisorMail($bag);
