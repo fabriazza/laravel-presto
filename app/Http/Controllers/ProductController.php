@@ -107,8 +107,8 @@ class ProductController extends Controller
 
             GoogleVisionSafeSearchImage::withChain([
                 new GoogleVisionLabelImage($i->id),
-                new GoogleVisionRemoveFaces($i->id),
                 new Watermark($i->id),
+                new GoogleVisionRemoveFaces($i->id),
                 new ResizeImage($newFileName, 300, 150),
                 new ResizeImage($newFileName, 300, 300),
             

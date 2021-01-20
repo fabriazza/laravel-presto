@@ -37,9 +37,10 @@ class Watermark implements ShouldQueue
         
         $image = Image::load($srcPath);
 
-        $image->watermark(base_path('resources/img/lello.png'))
-        ->watermarkHeight(20, Manipulations::UNIT_PERCENT)
-        ->watermarkWidth(20, Manipulations::UNIT_PERCENT)
+        $image->watermark(base_path('resources/img/presto_striscia.png'))
+        ->watermarkPadding(0, 80, Manipulations::UNIT_PIXELS)
+        ->watermarkHeight(100, Manipulations::UNIT_PERCENT)
+        ->watermarkWidth(100, Manipulations::UNIT_PERCENT)
         ->watermarkOpacity(50);
         $image->save($srcPath);
     }
