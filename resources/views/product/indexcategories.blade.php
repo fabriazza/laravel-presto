@@ -6,7 +6,11 @@
     <div class="container">
         <div class="row justify-content-center align-items-center mt-5 position-relative">
             <div class="col-12 col-md-6 py-5">
-                <h1 class="text-white font-weight-bold">{{ __('ui.welcomecategories') }} <span class="text-capitalize">{{ $products->first()->category->name }}</span></h1>
+                @if (count($products) == 0)
+                    <h1 class="text-white font-weight-bold"><span>{{ __('ui.noproducts') }}</span></h1>
+                @else
+                    <h1 class="text-white font-weight-bold">{{ __('ui.welcomecategories') }} <span class="text-capitalize">{{ $products->first()->category->name }}</span></h1>
+                @endif
             </div>
             <div class="col-12 col-md-6 py-5 text-center">
                 <img src="/img/presto_category.svg" alt="Presto" class="category-section-img">
@@ -15,26 +19,28 @@
     </div>
 </div>
 
-<div class="container pb-5">
-    <div class="row justify-content-center align-items-center">
-        @foreach ($products as $product)
-        <div class="col-10">
-           <x-card
-           title="{{ $product->title }}"
-           description="{{ $product->description }}"
-           price="{{ $product->price }}"
-           categoryname="{{ $product->category->name }}"
-           user="{{ $product->user->name }}"
-           createdat="{{ $product->created_at->format('d/m/y') }}"
-           categoryid="{{ $product->category->id }}"
-           productid="{{$product->id}}"
-           :images="$product->images"
-           />
+@if (count($products) != 0)
+    <div class="container pb-5">
+        <div class="row justify-content-center align-items-center">
+            @foreach ($products as $product)
+            <div class="col-10">
+            <x-card
+            title="{{ $product->title }}"
+            description="{{ $product->description }}"
+            price="{{ $product->price }}"
+            categoryname="{{ $product->category->name }}"
+            user="{{ $product->user->name }}"
+            createdat="{{ $product->created_at->format('d/m/y') }}"
+            categoryid="{{ $product->category->id }}"
+            productid="{{$product->id}}"
+            :images="$product->images"
+            />
+            </div>
+            @endforeach
         </div>
-        @endforeach
+        <div class="row justify-content-center">
+            {{$products->links()}}
+        </div>
     </div>
-    <div class="row justify-content-center">
-        {{$products->links()}}
-    </div>
-</div>
+@endif
 @endsection

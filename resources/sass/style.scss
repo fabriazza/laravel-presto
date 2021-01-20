@@ -4,12 +4,17 @@ $color-accent:#E57720;
 $color-soft:#f7f7f7;
 $accent-gradient: linear-gradient(180deg, rgba(41,45,78,1) 0%, rgba(63,108,129,1) 41%, rgba(159,199,207,1) 100%);
 
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-family: 'Paytone One', sans-serif;
 }
 
 body {
