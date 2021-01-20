@@ -39,11 +39,12 @@
         'reject' => 'Rifiuta',
         'rejected' => 'Prodotti rifiutati',
         'listempty' => 'La lista dei prodotti è vuota',
-        'check' => 'Verifica i prodotti',
+        'check' => 'Revisiona gli annunci',
         'action' => "Azioni",
         'wordnotfind' => 'Non ci sono prodotti che soddisfano questa ricerca',
         'images' => 'Immagini',
         'undo' => 'Ripristina',
         'delete' => 'Elimina',
-        'welcomecategories' => 'Tutti gli annunci della categoria:'
+        'welcomecategories' => 'Tutti gli annunci della categoria:',
+        'deletemessage' => 'Annuncio eliminato con successo'
     ];

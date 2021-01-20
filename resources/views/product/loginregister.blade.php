@@ -4,7 +4,7 @@
 <div class="container py-5 mt-3">
     <div class="row justify-content-center pt-5">
         <div class="col-12 col-md-5 m-0 mr-md-2">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-header bg-accent text-white">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -51,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mt-5 mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-accent secondary">
                                     {{ __('Login') }}
@@ -70,7 +70,7 @@
         </div>
 
         <div class="col-12 col-md-5 m-0 ml-md-2">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-header bg-main text-white">{{ __('ui.register') }}</div>
 
                 <div class="card-body">

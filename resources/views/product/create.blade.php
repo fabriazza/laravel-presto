@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container justify-content-center py-5">
-        <div class="row">
+    <div class="container justify-content-center py-5 mt-5">
+        <div class="row pt-2">
             <div class="col-12 my-4 text-center">
                 <h1>{{ __('ui.create')}}</h1>
             </div>
@@ -26,24 +26,32 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="form-group w-50">
-                        <label for="category">{{ __('ui.category')}}</label>
-                        <select name="category_id" class="custom-select">
-                            @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <label for="price">{{ __('ui.price')}}</label>
-                    <div class="input-group mb-3 w-50">
-                        <input type="text" name="price" class="form-control" value="{{old('price')}}">
-                        <div class="input-group-append">
-                          <span class="input-group-text">€</span>
+                    <div class="container">
+                        <div class="row justify-content-between">
+                            <div class="col-12 col-md-6 p-0 pr-md-3 m-0">
+                                <div class="form-group">
+                                    <label for="category">{{ __('ui.category')}}</label>
+                                    <select name="category_id" class="custom-select">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 p-0 pl-md-3 m-0">
+                                <label for="price">{{ __('ui.price')}}</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" name="price" class="form-control" value="{{old('price')}}">
+                                    <div class="input-group-append">
+                                      <span class="input-group-text">€</span>
+                                    </div>
+                                </div>
+                                @error('price')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
                         </div>
                     </div>
-                    @error('price')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
                     <div class="form-group row">
                         <label for="images" class="col-md-12 col-form-label">{{ __('ui.images')}}</label>
                         <div class="col-md-12">
