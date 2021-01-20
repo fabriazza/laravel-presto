@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container my-4 py-4">
-        <div class="row justify-content-center">
+    <div class="container py-5 mt-5">
+        <div class="row justify-content-center pt-4">
             <div class="col-12 col-md-6">
                 <h1 class="text-center mb-5">{{ __('ui.workwhitus')}}</h1>
                 <form  method="POST" action="{{route('lavora.send')}}">

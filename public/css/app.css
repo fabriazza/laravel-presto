@@ -9971,6 +9971,18 @@ h3 {
     border-color: #dee2e6;
   }
 }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+body {
+  background-color: #f1eae3;
+}
+
 .text-main {
   color: #272E30;
 }
@@ -10007,6 +10019,10 @@ h3 {
   background-color: #f7f7f7;
 }
 
+.border-second {
+  border-color: #3a4547;
+}
+
 .btn-accent {
   padding: 0.6rem 1rem 0.6rem 1rem;
   background-color: #272E30;
@@ -10025,11 +10041,11 @@ h3 {
 }
 
 .btn-accent:hover {
-  box-shadow: 0px 5px 14px 0px rgba(249, 86, 25, 0.7);
+  box-shadow: 0px 5px 14px 0px rgba(33, 54, 77, 0.671);
   color: #ffffff !important;
 }
 .btn-accent:hover.secondary {
-  box-shadow: 0px 5px 14px 0px rgba(33, 54, 77, 0.671);
+  box-shadow: 0px 5px 14px 0px rgba(249, 86, 25, 0.7);
 }
 
 .btn-accent i {
@@ -10042,6 +10058,14 @@ h3 {
   font-size: 14px;
   color: #aeb5c2;
   margin-right: 10px;
+}
+
+.text-0-5 {
+  font-size: 0.5rem;
+}
+
+.text-0-8 {
+  font-size: 0.8rem;
 }
 
 .text-1 {
@@ -10110,11 +10134,20 @@ h3 {
 
 .title-section {
   padding-top: 12vh;
-  background: linear-gradient(0deg, white 0%, #e57720 35%, #272e30 100%);
+  background: linear-gradient(180deg, #272e30 7%, #e57720 45%, #f1eae3 98%);
 }
 
 .title-section-img {
   width: 80%;
+}
+
+.category-section {
+  padding-top: 12vh;
+  background: linear-gradient(180deg, #272e30 7%, #e57720 45%, #f1eae3 98%);
+}
+
+.category-section-img {
+  width: 60%;
 }
 
 .search-block {
@@ -10177,7 +10210,7 @@ h3 {
 }
 
 .footer-links a:active, .footer-links a:focus, .footer-links a:hover {
-  color: #3366cc;
+  color: #E57720;
   text-decoration: none;
 }
 
@@ -10203,20 +10236,6 @@ h3 {
   margin: 0;
 }
 
-@media (max-width: 991px) {
-  .site-footer [class^=col-] {
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 767px) {
-  .site-footer {
-    padding-bottom: 0;
-  }
-
-  .site-footer .copyright-text, .site-footer .social-icons {
-    text-align: center;
-  }
-}
 .social-icons {
   padding-left: 0;
   margin-bottom: 0;
@@ -10278,10 +10297,141 @@ h3 {
   background-color: #ea4c89;
 }
 
-#prestonav {
+.prestonav {
   width: 50%;
 }
 
+.prestofoot {
+  width: 30%;
+  padding-bottom: 2em;
+}
+
+.flags-dropdown {
+  min-width: 3rem;
+  padding: 0.5rem 1rem;
+}
+
+.drag-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: #ffd5b5 !important;
+  border-width: 4px !important;
+  border-radius: 16px !important;
+  border-style: dashed !important;
+}
+
+#numeri {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(1, 1, 1, 0.6755077031) 50%, rgba(0, 0, 0, 0) 100%), url("/img/numbers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.close-custom {
+  color: #fff !important;
+}
+
+#app {
+  min-height: 60vh;
+}
+
+.circle-number-box {
+  padding: 1rem;
+  width: 120%;
+  height: 120%;
+  border: 1px solid var(--main-color);
+  border-radius: 100%;
+}
+
+.wrapper-circle-box {
+  width: 100px;
+  height: 100px;
+  transform: rotateZ(-90deg);
+}
+
+.wrapperProgress {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+}
+
+.circle-label-1 {
+  position: absolute;
+  font-weight: 600;
+  top: 40px;
+  left: 72px;
+}
+
+.circle-label-2 {
+  position: absolute;
+  font-weight: 600;
+  top: 40px;
+  left: 66px;
+}
+
+.circle-label-3 {
+  position: absolute;
+  font-weight: 600;
+  top: 40px;
+  left: 71px;
+}
+
+.circle-label-4 {
+  position: absolute;
+  font-weight: 600;
+  top: 40px;
+  left: 64px;
+}
+
+.circle-label-5 {
+  position: absolute;
+  font-weight: 600;
+  top: 40px;
+  left: 76px;
+}
+
+@media (max-width: 990px) {
+  #prestonav {
+    width: 75%;
+  }
+
+  .site-footer [class^=col-] {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 568px) {
+  .wrapperProgress {
+    overflow: scroll;
+    justify-content: flex-start;
+    padding-top: 2em;
+  }
+
+  .circle-label-1 {
+    top: 39px;
+    left: 62px;
+  }
+
+  .circle-label-2 {
+    top: 39px;
+    left: 55px;
+  }
+
+  .circle-label-3 {
+    top: 39px;
+    left: 61px;
+  }
+
+  .circle-label-4 {
+    top: 39px;
+    left: 53px;
+  }
+
+  .circle-label-5 {
+    top: 39px;
+    left: 66px;
+  }
+}
 @media (max-width: 767px) {
   .img-custom {
     border-top-left-radius: 10px !important;
@@ -10304,27 +10454,15 @@ h3 {
     margin-right: 0;
     font-weight: 600;
   }
-}
-@media (max-width: 990px) {
-  #prestonav {
-    width: 75%;
+
+  .site-footer {
+    padding-bottom: 0;
+  }
+
+  .site-footer .copyright-text, .site-footer .social-icons {
+    text-align: center;
   }
 }
-.flags-dropdown {
-  min-width: 3rem;
-  padding: 0.5rem 1rem;
-}
-
-.drag-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-color: #ffd5b5 !important;
-  border-width: 4px !important;
-  border-radius: 16px !important;
-  border-style: dashed !important;
-}
-
 .flag-icon-background, .flag-icon {
   background-size: contain;
   background-position: 50%;

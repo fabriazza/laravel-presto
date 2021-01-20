@@ -44,5 +44,7 @@
         'wordnotfind' => 'There are no announcements for this word',
         'images' => 'Images',
         'undo' => 'Undo',
-        'delete' => 'Delete'
+        'delete' => 'Delete',
+        'welcomecategories' => 'All announcements in the category:',
+        'deletemessage' => 'Announcement deleted with success'
     ];
