@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 @if (session('message'))
     <div class="container pt-5 mt-5">
         <div class="row justify-content-center pt-4">
@@ -11,6 +10,28 @@
         </div>
     </div>
 @endif
+
+<div class="container pt-5">
+    <div class="row pt-5 mt-5 align-items-center">
+        <div class="col-12 col-md-6 d-flex  justify-content-center">
+            <img src="{{Storage::url(Auth::user()->img)}}" class="w-50 img-fluid img-admin " alt="">
+        </div>
+        <div class="col-12 col-md-6">
+            {{-- user --}}
+            <h3>{{Auth::user()->name}}</h3>
+            {{-- email --}}
+            <i class="fas fa-at text-accent"></i><a class="text-decoration-none text-second" href="mailto"> {{Auth::user()->email}}</a>
+
+            {{-- telefono --}}
+            <p class="pt-3"><i class="fas fa-phone text-accent"></i> {{Auth::user()->tel}}</p>
+            {{-- annunci pubblicati --}}
+            <p><i class="fas fa-box-open text-accent"></i> {{count(Auth::user()->products)}}</p>
+
+
+        </div>
+    </div>
+</div>
+
 
 @if ($product)
 <div class="container py-5 mt-5">

@@ -15,6 +15,9 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto d-flex align-items-center  text-soft">
+                <li>
+                    <a class="nav-link text-soft" href="{{route('product.index')}}"> {{ __('ui.product') }}</a>
+                </li>
                 <li class="nav-item dropdown d-flex align-items-center">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn text-soft" data-toggle="modal" data-target="#exampleModalCenter">

@@ -56,7 +56,11 @@
         'signin' => 'Sign In',
         'privacy' => 'We will not share your informations with nobody else',
         'conditions' => 'I accept the terms of the',
-        'ournumbers' => 'Our Numbers'
+        'ournumbers' => 'Our Numbers',
+        'welcomeindex'=>'All our announcements',
+        'product'=>'Announcements',
+        'phone'=>'Telephone',
+        'img' =>'Profile Image'
 
 
 

@@ -25,7 +25,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products=Product::where('is_accepted', true)
+        ->orderBy('created_at', 'desc')->paginate(5);
+        return view('product.index', compact('products'));
     }
 
     /**
