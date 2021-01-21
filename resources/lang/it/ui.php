@@ -14,7 +14,9 @@
         'category' => 'Categorie',
         'categorycho' => 'Scegli categorie',
         'wus' => 'Cosa vuoi cercare?',
-        'se' => 'Cerca',
+        'se' => 'Risultati di ricerca per la parola',
+        'search' => 'Cerca',
+        'searchplaceholder' => 'Che affare stai cercando oggi?',
         'close' => 'Chiudi',
         'register' => 'Registrati',
         'insert' => 'Inserisci annuncio',
@@ -60,5 +62,6 @@
         'welcomeindex'=>'Tutti i nostri annunci',
         'product'=>'Annunci',
         'phone'=>'Telefono',
-        'img' =>'Foto del Profilo'
+        'img' =>'Foto del Profilo',
+        'noproducts' => 'Nessun annuncio presente per la categoria selezionata'
     ];

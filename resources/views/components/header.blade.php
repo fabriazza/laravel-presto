@@ -12,18 +12,18 @@
                 <div class="col-12 col-9">
                     <div class="input-group search-block-inner">
                         <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('ui.category') }}</button>
+                            {{-- <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('ui.category') }}</button>
                             <div class="dropdown-menu">
                                 @foreach ($categories as $category)
                                 <a class="dropdown-item text-accent" href="{{route('category.index', $category)}}">{{$category->name}}</a>
                                 @endforeach
-                            </div>
+                            </div> --}}
                             <form action="{{ route('search') }}" method="get">
                                 @csrf
                             </div>
-                                <input type="text" name="q" class="form-control" placeholder="{{ __('ui.welcome') }}" aria-label="{{ __('ui.wus') }}" aria-describedby="button-addon2">
+                                <input type="text" name="q" class="form-control" placeholder="{{ __('ui.searchplaceholder') }}" aria-label="{{ __('ui.wus') }}" aria-describedby="button-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-accent1" type="submit" id="button-addon2"><i class="fas fa-search"></i> {{ __('ui.se') }}</button>
+                                    <button class="btn btn-accent1" type="submit" id="button-addon2"><i class="fas fa-search"></i> {{ __('ui.search') }}</button>
                                 </div>
                             </form>
                     </div>

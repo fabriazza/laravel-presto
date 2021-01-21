@@ -10,11 +10,6 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto d-flex align-items-center  text-soft">
                 <li>
                     <a class="nav-link text-soft" href="{{route('product.index')}}"> {{ __('ui.product') }}</a>
                 </li>
@@ -24,6 +19,13 @@
                         {{ __('ui.category') }}
                     </button>
                 </li>
+                <li>
+                    <a class="nav-link text-soft" href="{{route('lavora')}}">{{__('ui.workwhitus')}}</a>
+                </li>
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto d-flex align-items-center  text-soft">
 
                 <!-- Authentication Links -->
                 @guest

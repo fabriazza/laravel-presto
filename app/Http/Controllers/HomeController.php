@@ -32,14 +32,15 @@ class HomeController extends Controller
 
     public function indexcategories($categoryid)
     {
-        $category=Category::find($categoryid);
-        $products=$category->products()->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(5);
+        $category = Category::find($categoryid);
+
+        $products = $category->products()->where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(5);
         return view('product.indexcategories', compact('products'));
     }
 
     public function search(Request $request){
-        $q=$request->input('q');
-        $products=Product::search($q)->where('is_accepted',true)->get();
+        $q = $request->input('q');
+        $products = Product::search($q)->where('is_accepted',true)->get();
 
 
         return view('search_result',compact('q','products'));
