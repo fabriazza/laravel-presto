@@ -47,9 +47,15 @@ Route::post('/lavora/send',[MailController::class, 'candidato'])->name('lavora.s
 
 Route::post('/product/images/upload',[ProductController::class, 'uploadImage'])->name('products.images.upload');
 
+Route::post('/product/images/editupload',[ProductController::class, 'uploadEditImage'])->name('products.images.editupload');
+
 Route::delete('/product/images/remove',[ProductController::class, 'removeImage'])->name('products.images.remove');
 
 Route::get('/product/images',[ProductController::class, 'getImages'])->name('products.images');
+
+Route::get('/product/edit/images',[ProductController::class, 'editImages'])->name('products.editimages');
+
+Route::get('/product/editget/images',[ProductController::class, 'getEditImages'])->name('products.editgetimages');
 
 Route::get('/thankyou', [MailController::class, 'thankyou'])->name('lavora.thankyou');
 
@@ -60,3 +66,10 @@ Route::get('/search',[HomeController::class, 'search'])->name('search');
 Route::post('/locale/{locale}', [HomeController::class, 'locale'])->name('locale');
 
 Route::get('/product/index', [ProductController::class, 'index'])->name('product.index');
+
+Route::get('/user', [ProductController::class , 'user'])->name('user');
+
+Route::get('/product/edit/{product}',[ProductController::class, 'edit'])->name('product.edit');
+
+Route::post('/product/update/{product}',[ProductController::class, 'update'])->name('product.update');
+
