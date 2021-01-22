@@ -14,7 +14,7 @@
 <div class="container pt-5">
     <div class="row pt-5 mt-5 align-items-center">
         <div class="col-12 col-md-6 d-flex  justify-content-center">
-            <img src="{{Storage::url(Auth::user()->img)}}" class="w-50 img-fluid img-admin " alt="">
+            <img src="{{Storage::url(Auth::user()->img)}}" class="w-50 img-fluid img-admin rounded-circle" alt="">
         </div>
         <div class="col-12 col-md-6">
             <h3>{{Auth::user()->name}}</h3>
@@ -156,7 +156,7 @@
     </div>
 </div>
 @else
-<div class="container my-5 py-5">
+<div class="container my-5 py-3">
     <div class="row pt-4">
         <div class="col-12">
             <h3 class="text-center">{{__('ui.listempty')}}</h3>
@@ -165,7 +165,7 @@
 </div>
 @endif
 
-<div class="container">
+<div class="container py-5">
     <div class="row">
         <div class="col-12">
             <h3 class="text-center mb-5 font-weight-bold">{{__('ui.rejected')}}</h3>

@@ -63,5 +63,7 @@
         'product'=>'Anuncios',
         'phone'=>'Telefono',
         'img' =>'Foto de Prefil',
-        'noproducts' => 'No hay anuncios para la categoría seleccionada'
+        'noproducts' => 'No hay anuncios para la categoría seleccionada',
+        'userannouncements' => 'Tus anuncios',
+        'lastannouncements' => 'Los últimos anuncios'
     ];

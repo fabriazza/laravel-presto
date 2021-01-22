@@ -66,6 +66,23 @@ class ProductController extends Controller
             ]
         );
     }
+
+    public function uploadEditImage(Request $request)
+    {
+        $uniqueSecret = $request->input('uniqueSecret2');
+        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+
+        dispatch(new ResizeImage($fileName, 120, 120));
+
+        session()->push("images.{$uniqueSecret}", $fileName);
+        return response()->json(
+            [
+                'id' => $fileName
+            ]
+        );
+    }
+
+
     public function removeImage(Request $request)
     {
         $uniqueSecret = $request->input('uniqueSecret');
@@ -113,6 +130,8 @@ class ProductController extends Controller
                 new GoogleVisionRemoveFaces($i->id),
                 new ResizeImage($newFileName, 300, 150),
                 new ResizeImage($newFileName, 300, 300),
+                new ResizeImage($newFileName, 120, 120)
+
             
             ])->dispatch($i->id);
             
@@ -140,6 +159,48 @@ class ProductController extends Controller
 
     }
 
+    public function getEditImages(Request $request)
+    {
+        $uniqueSecret = $request->input('uniqueSecret2');
+        $images = session()->get("images.{$uniqueSecret}", []);
+        // $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+        // $images = array_diff($images,$removedImages);
+
+        $data = [];
+
+        foreach ($images as $image){
+            $data[] = [
+                'id' => $image,
+                'src' => ProductImage::getUrlByFilePath($image, 120, 120)
+            ];
+        }
+        return response()->json($data);
+
+    }
+
+    public function editImages(Request $request)
+    {
+        // $uniqueSecret = $request->input('uniqueSecret');
+        $productId = $request->input('productId');
+        $product = Product::find($productId);
+        $images = $product->images;
+        // dd($images);
+        // $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+        // $images = array_diff($images,$removedImages);
+
+        $data = [];
+
+        foreach ($images as $image){
+            $data[] = [
+                'id' => $image,
+                'src' => ProductImage::getUrlByFilePath($image->file, 120, 120)
+            ];
+        }
+        return response()->json($data);
+
+    }
+    
+
     /**
      * Display the specified resource.
      *
@@ -158,9 +219,13 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Request $request, Product $product)
     {
-        //
+        // $images=$product->images()->pluck('file');
+        // dd($images);
+        // dd($product);
+        $uniqueSecret2 = $request->old('uniqueSecret2', base_convert(sha1(uniqid(mt_rand())), 16, 36));
+        return view ('product.edit', compact('product', 'uniqueSecret2'));
     }
 
     /**
@@ -172,7 +237,38 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->all());
+
+        $uniqueSecret = $request->input('uniqueSecret2');
+
+        $images = session()->get("images.{$uniqueSecret}", []);
+        // $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+        // $images = array_diff($images,$removedImages);
+        foreach ($images as $image) {
+            $i = new ProductImage();
+            $fileName = basename($image);
+            $newFileName = "public/products/{$product->id}/{$fileName}";
+            Storage::move($image,$newFileName);
+
+            $i->file = $newFileName;
+            $i->product_id = $product->id;
+            $i->save();
+
+            GoogleVisionSafeSearchImage::withChain([
+                new GoogleVisionLabelImage($i->id),
+                new Watermark($i->id),
+                new GoogleVisionRemoveFaces($i->id),
+                new ResizeImage($newFileName, 300, 150),
+                new ResizeImage($newFileName, 300, 300),
+                new ResizeImage($newFileName, 120, 120)
+
+            
+            ])->dispatch($i->id);
+            
+        }
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
+        return redirect(route('product.thankyou', compact('product')));
+
     }
 
     /**
@@ -197,5 +293,10 @@ class ProductController extends Controller
     public function thankyou(Product $product)
     {
         return view('product.thankyou', compact('product'));
+    }
+
+    public function user()
+    {
+        return view ('user');
     }
 }

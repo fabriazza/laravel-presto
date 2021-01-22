@@ -39,11 +39,11 @@
         'createdat' => 'Creato il',
         'accept' => 'Accetta',
         'reject' => 'Rifiuta',
-        'rejected' => 'Prodotti rifiutati',
-        'listempty' => 'La lista dei prodotti è vuota',
+        'rejected' => 'Annunci rifiutati',
+        'listempty' => 'La lista degli annunci è vuota',
         'check' => 'Revisiona gli annunci',
         'action' => "Azioni",
-        'wordnotfind' => 'Non ci sono prodotti che soddisfano questa ricerca',
+        'wordnotfind' => 'Non ci sono annunci che soddisfano questa ricerca',
         'images' => 'Immagini',
         'undo' => 'Ripristina',
         'delete' => 'Elimina',
@@ -63,5 +63,7 @@
         'product'=>'Annunci',
         'phone'=>'Telefono',
         'img' =>'Foto del Profilo',
-        'noproducts' => 'Nessun annuncio presente per la categoria selezionata'
+        'noproducts' => 'Nessun annuncio presente per la categoria selezionata',
+        'userannouncements' => 'I tuoi annunci',
+        'lastannouncements' => 'Gli ultimi annunci'
     ];
