@@ -63,5 +63,7 @@
         'product'=>'Announcements',
         'phone'=>'Telephone',
         'img' =>'Profile Image',
-        'noproducts' => 'No announcements finded for the category selected'
+        'noproducts' => 'No announcements finded for the category selected',
+        'userannouncements' => 'Your announcements',
+        'lastannouncements' => 'The last announcements'
     ];

@@ -53,7 +53,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right bg-main" aria-labelledby="navbarDropdown">
-                            <a href="{{route('user')}}" class="dropdown-item text-accent">I tuoi annunci</a>
+                            <a href="{{route('user')}}" class="dropdown-item text-accent">{{__('ui.userannouncements')}}</a>
                             <a class="dropdown-item text-accent" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
